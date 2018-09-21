@@ -1,0 +1,35 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/Values",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 20953
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Values",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Values/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 20953
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Values/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "apitest",
+        "AllowedScopes": [ "roles" ]
+      },
+      "RouteClaimsRequirement": {
+        "role": "test_webapi_access"
+      }
+    }
+  ]
+}

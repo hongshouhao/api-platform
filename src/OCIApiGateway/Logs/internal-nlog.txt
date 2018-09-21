@@ -1,0 +1,642 @@
+2018-09-17 10:43:02.7209 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 10:46:29.1093 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 10:48:28.7816 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 11:11:37.8744 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 11:21:05.7918 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 14:53:48.8446 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 15:01:43.7774 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 15:05:57.7984 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 15:06:16.8116 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 15:19:04.6381 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 15:19:37.8028 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 15:25:05.7943 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 15:45:10.8633 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:01:55.4358 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:08:55.4830 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:10:08.9346 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:11:05.8413 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:14:16.4050 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:18:04.5181 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:31:26.6694 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:33:36.6394 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:35:07.6807 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:36:18.6274 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:41:51.0028 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:42:28.2992 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:54:11.7985 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 16:55:26.5579 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 17:00:43.8017 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 17:01:01.8096 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 17:02:22.9492 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 17:03:08.1202 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 17:05:19.7739 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 19:05:34.0047 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-17 19:09:06.3399 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:34:56.1062 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:36:17.0632 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:42:29.0226 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:44:18.1120 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:45:44.8893 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:48:21.9391 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:50:19.7000 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 08:52:54.8610 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 09:30:24.1863 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 09:42:16.7914 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 09:43:03.7632 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 10:11:36.6184 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 10:11:42.4143 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 10:19:06.8937 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 10:33:53.5370 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 12:36:47.6466 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 12:36:55.2204 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 12:39:09.1869 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 14:17:22.4595 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 14:17:31.5594 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 14:18:45.1977 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 14:20:58.6644 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 14:22:47.8359 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 15:56:54.4198 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:07:38.0372 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:08:12.3828 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:20:48.2116 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:21:28.0041 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:21:48.7986 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:25:06.6955 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:25:47.7527 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:26:41.2292 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:27:36.0838 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:29:08.5289 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:33:13.3991 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:33:23.6230 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:35:50.3103 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:37:29.2258 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:48:49.5570 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:55:49.1529 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:56:54.5782 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 16:58:15.5236 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 17:00:38.8853 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 17:02:11.0993 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 17:03:49.0677 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 17:04:51.8742 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 17:06:17.4661 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 17:08:24.9105 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-18 17:11:11.5307 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 08:11:49.4564 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 08:13:47.6591 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 08:17:36.2652 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 10:15:08.2103 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 17:08:28.0528 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 17:21:43.5320 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 17:23:25.9160 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 17:25:11.6548 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 17:28:32.1220 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 17:30:00.7917 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 17:31:28.1547 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 18:49:21.6401 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 19:19:55.1398 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-19 20:10:58.8969 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 08:31:42.4709 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 08:43:03.4349 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 08:53:33.5187 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 09:11:40.7878 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 09:28:04.6216 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 10:09:22.8675 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 10:18:36.1246 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 10:33:26.4472 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 10:57:35.5698 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2018-09-20 10:58:11.2325 Error Parsing configuration from E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing E:\_TFS\oci-apigateway-develop\src\OCIApiGateway\bin\Debug\netcoreapp2.1\NLog.config.  ---> NLog.NLogConfigurationException: Target blackhole not found.
+   at NLog.Config.XmlLoggingConfiguration.ParseLoggerElement(NLogXmlElement loggerElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseRulesElement(NLogXmlElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(NLogXmlElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---

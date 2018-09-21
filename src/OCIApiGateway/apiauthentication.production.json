@@ -1,0 +1,54 @@
+[
+  {
+    "AuthScheme": "ocelot_administration",
+    "Authority": "http://localhost:5000",
+    "ApiName": "ocelot_administration_api",
+    "ApiSecret": "ocelot_administration_secret",
+    "RoleClaimType": "role",
+    "NameClaimType": "name",
+    "EnableCaching": true,
+    "ClaimsIssuer": null,
+    "CacheDuration": 10,
+    "RequireHttpsMetadata": false,
+    "SupportedTokens": "Both",
+    "TokenRetrievalOptions": {
+      "Source": "FromAuthorizationHeader",
+      "NameOrSchema": "Bearer"
+    }
+  },
+  {
+    "AuthScheme": "consul_administration",
+    "Authority": "http://localhost:5000",
+    "ApiName": "consul_administration_api",
+    "ApiSecret": "consul_administration_secret",
+    "RoleClaimType": "role",
+    "NameClaimType": "name",
+    "EnableCaching": true,
+    "ClaimsIssuer": null,
+    "CacheDuration": 10,
+    "RequireHttpsMetadata": false,
+    "SupportedTokens": "Both",
+    "TokenRetrievalOptions": {
+      "Source": "FromAuthorizationHeader",
+      "NameOrSchema": "Bearer"
+    }
+  },
+
+  {
+    "AuthScheme": "apitest",
+    "Authority": "http://localhost:5000",
+    "ApiName": "test_webapi",
+    "ApiSecret": "secret",
+    "RoleClaimType": "role",
+    "NameClaimType": "name",
+    "EnableCaching": true,
+    "ClaimsIssuer": null,
+    "CacheDuration": 10,
+    "RequireHttpsMetadata": false,
+    "SupportedTokens": "Both",
+    "TokenRetrievalOptions": {
+      "Source": "FromAuthorizationHeader",
+      "NameOrSchema": "Bearer"
+    }
+  }
+]

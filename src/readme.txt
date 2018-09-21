@@ -1,0 +1,1 @@
+OCIApiGateway.Admin为基于数据库管理配置代码，目前没有使用，使用ocelot原生接口，可以保存为json文件也可以保存指consul

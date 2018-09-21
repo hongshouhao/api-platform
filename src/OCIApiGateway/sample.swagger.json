@@ -1,0 +1,28 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/swagger/index.html",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 20953
+        }
+      ],
+      "UpstreamPathTemplate": "/swagger/index.html",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/swagger/{v}/swagger.json",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 20953
+        }
+      ],
+      "UpstreamPathTemplate": "/swagger/{v}/swagger.json",
+      "UpstreamHttpMethod": []
+    }
+  ]
+}
