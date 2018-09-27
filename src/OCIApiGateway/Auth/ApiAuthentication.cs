@@ -4,17 +4,17 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.IO;
 
-namespace OCIApiGateway
+namespace OCIApiGateway.Auth
 {
     public static class ApiAuthentication
     {
-        public static void AddAuthentications(this IServiceCollection services, IHostingEnvironment env)
+        public static void AddAuthentications(this IServiceCollection services, IHostingEnvironment env, IConfiguration configuration)
         {
             IdsAuthOptions[] authOptions = ReadAuthOptions(env);
             AuthenticationBuilder builder = services.AddAuthentication();
@@ -22,6 +22,12 @@ namespace OCIApiGateway
             {
                 builder.AddIdentityServerAuthentication(authop.AuthScheme, BuildIdentityServerAuthenticationOptions(authop));
             }
+
+            services.AddAuthorization(options =>
+            {
+                string[] requiredRoles = new[] { AdminAPI.GetRequiredRole(configuration) };
+                options.AddPolicy(AdminAPI.AuthorizePolicy, policy => policy.AddRequirements(new AdminApiRoleRequirement(requiredRoles)));
+            });
         }
 
         public static Action<IdentityServerAuthenticationOptions> BuildIdentityServerAuthenticationOptions(IdsAuthOptions authop)

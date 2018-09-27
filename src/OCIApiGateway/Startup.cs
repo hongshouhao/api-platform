@@ -3,14 +3,17 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Ocelot.Administration;
 using Ocelot.Cache.CacheManager;
+using Ocelot.Configuration.Repository;
+using Ocelot.Configuration.Setter;
 using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
 using Ocelot.Provider.Polly;
 using Ocelot.Tracing.Butterfly;
-using System;
-using System.Linq;
+using OCIApiGateway.Auth;
+using OCIApiGateway.Configuration;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace OCIApiGateway
 {
@@ -36,7 +39,10 @@ namespace OCIApiGateway
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentications(Environment);
+            services.AddSingleton<IFileConfigurationRepository, ConfigurationDbRepository>();
+            services.AddSingleton<IFileConfigurationSetter, InternalConfigurationSetter>();
+
+            services.AddAuthentications(Environment, Configuration);
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", builder =>
@@ -45,15 +51,13 @@ namespace OCIApiGateway
                            .AllowCredentials()
                            .AllowAnyMethod());
             });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             IOcelotBuilder ocelotBuilder = services.AddOcelot(Configuration);
 
             if (StartOptions.AddConsul)
                 ocelotBuilder.AddConsul();
-
-            if (StartOptions.StoreConfigInConsul)
-                ocelotBuilder.AddConfigStoredInConsul();
 
             if (StartOptions.AddButterfly)
                 ocelotBuilder.AddButterfly(option =>
@@ -62,16 +66,11 @@ namespace OCIApiGateway
                     option.Service = StartOptions.ButterflyLoggingKey;
                 });
 
-            if (StartOptions.AddAdministration)
-            {
-                IdsAuthOptions authOption = ApiAuthentication.ReadAuthOptions(Environment).FirstOrDefault(s => s.AuthScheme == StartOptions.AdministrationAuthScheme);
-                if (authOption == null)
+            if (StartOptions.AddSwagger)
+                services.AddSwaggerGen(c =>
                 {
-                    throw new Exception($"Ocelot管理接口授权配置错误: [apiauthentication.{Environment.EnvironmentName}.json]中找不到[AuthScheme = '{StartOptions.AdministrationAuthScheme}']");
-                }
-
-                ocelotBuilder.AddAdministration("/administration", ApiAuthentication.BuildIdentityServerAuthenticationOptions(authOption));
-            }
+                    c.SwaggerDoc("v1", new Info { Title = "Ocelot Administrator API", Version = "v1" });
+                });
 
             ocelotBuilder.AddPolly()
                 .AddCacheManager(x =>
@@ -91,10 +90,19 @@ namespace OCIApiGateway
                 //app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            if (StartOptions.AddSwagger)
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ocelot Administrator API V1");
+                });
+            }
+
+            //app.UseHttpsRedirection();
             app.UseCors("CorsPolicy");
             app.UseMvc();
-            app.UseOcelot_().Wait();
+            app.UseOcelot().Wait();
         }
     }
 }

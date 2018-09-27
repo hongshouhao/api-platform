@@ -1,6 +1,6 @@
 ﻿using IdentityServer4.AccessTokenValidation;
 
-namespace OCIApiGateway
+namespace OCIApiGateway.Auth
 {
     public class IdsAuthOptions
     {

@@ -10,8 +10,8 @@ namespace OCIApiGateway
             string addConsulStr = configuration["AddConsul"];
             bool.TryParse(addConsulStr, out AddConsul);
 
-            string storeConfigInConsulStr = configuration["StoreConfigInConsul"];
-            bool.TryParse(storeConfigInConsulStr, out StoreConfigInConsul);
+            string addSwaggerStr = configuration["AddSwagger"];
+            bool.TryParse(addSwaggerStr, out AddSwagger);
 
             string addButterflyStr = configuration["AddButterfly"];
             bool.TryParse(addButterflyStr, out AddButterfly);
@@ -30,7 +30,7 @@ namespace OCIApiGateway
         }
 
         public readonly bool AddConsul;
-        public readonly bool StoreConfigInConsul;
+        public readonly bool AddSwagger;
 
         public readonly bool AddButterfly;
         public readonly string ButterflyHost;
