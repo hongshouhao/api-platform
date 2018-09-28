@@ -25,8 +25,8 @@ namespace OCIApiGateway.Auth
 
             services.AddAuthorization(options =>
             {
-                string[] requiredRoles = new[] { AdminAPI.GetRequiredRole(configuration) };
-                options.AddPolicy(AdminAPI.AuthorizePolicy, policy => policy.AddRequirements(new AdminApiRoleRequirement(requiredRoles)));
+                string[] requiredRoles = OcelotAPIAdminOptions.AdministrationRole.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                options.AddPolicy(OcelotAPIAdminOptions.AuthorizePolicy, policy => policy.AddRequirements(new AdminRoleRequirement(requiredRoles)));
             });
         }
 

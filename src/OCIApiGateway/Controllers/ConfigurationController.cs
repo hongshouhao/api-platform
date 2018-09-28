@@ -21,7 +21,7 @@ namespace OCIApiGateway.Controllers
     [CustomExceptionFilter]
     [Produces("application/json")]
     [Route("admin/[controller]")]
-    [Authorize(AuthenticationSchemes = AdminAPI.AuthenticationSchemes, Policy = AdminAPI.AuthorizePolicy)]
+    [ControllableAuthorize]
     public class ConfigurationController : Controller
     {
         private readonly IFileConfigurationSetter _setter;
@@ -97,7 +97,7 @@ namespace OCIApiGateway.Controllers
         /// </summary>
         /// <param name="ocelotSection">映射配置</param>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpPost]
         [Route("[action]")]
         public IActionResult DeleteSection(int id)
         {
@@ -139,7 +139,7 @@ namespace OCIApiGateway.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("[action]")]
-        public async Task<JsonResult> GetFullConfiguration()
+        public async Task<JsonResult> GetCompleteConfiguration()
         {
             var response = await _repo.Get();
             return new JsonResult(response.Data);

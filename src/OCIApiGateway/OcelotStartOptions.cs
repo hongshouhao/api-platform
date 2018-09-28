@@ -3,9 +3,9 @@ using System;
 
 namespace OCIApiGateway
 {
-    public class StartOptions
+    public static class OcelotStartOptions
     {
-        internal StartOptions(IConfiguration configuration)
+        static internal void Config(IConfiguration configuration)
         {
             string addConsulStr = configuration["AddConsul"];
             bool.TryParse(addConsulStr, out AddConsul);
@@ -21,22 +21,13 @@ namespace OCIApiGateway
             ButterflyLoggingKey = configuration["ButterflyLoggingKey"];
             if (string.IsNullOrWhiteSpace(ButterflyLoggingKey))
                 ButterflyLoggingKey = "ocelot1";
-
-            string addAdministrationStr = configuration["AddAdministration"];
-            bool.TryParse(addAdministrationStr, out AddAdministration);
-            AdministrationAuthScheme = configuration["AdministrationAuthScheme"];
-            if (string.IsNullOrWhiteSpace(AdministrationAuthScheme))
-                AddAdministration = false;
         }
 
-        public readonly bool AddConsul;
-        public readonly bool AddSwagger;
+        public static bool AddConsul;
+        public static bool AddSwagger;
 
-        public readonly bool AddButterfly;
-        public readonly string ButterflyHost;
-        public readonly string ButterflyLoggingKey;
-
-        public readonly bool AddAdministration;
-        public readonly string AdministrationAuthScheme;
+        public static bool AddButterfly;
+        public static string ButterflyHost;
+        public static string ButterflyLoggingKey;
     }
 }

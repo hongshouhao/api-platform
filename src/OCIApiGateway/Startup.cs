@@ -30,12 +30,12 @@ namespace OCIApiGateway
                                   .AddEnvironmentVariables();
 
             Configuration = builder.Build();
-            StartOptions = new StartOptions(Configuration);
+            OcelotStartOptions.Config(Configuration);
+            OcelotAPIAdminOptions.Config(Configuration);
         }
 
         public IConfiguration Configuration { get; }
         public IHostingEnvironment Environment { get; }
-        public StartOptions StartOptions { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -56,17 +56,17 @@ namespace OCIApiGateway
 
             IOcelotBuilder ocelotBuilder = services.AddOcelot(Configuration);
 
-            if (StartOptions.AddConsul)
+            if (OcelotStartOptions.AddConsul)
                 ocelotBuilder.AddConsul();
 
-            if (StartOptions.AddButterfly)
+            if (OcelotStartOptions.AddButterfly)
                 ocelotBuilder.AddButterfly(option =>
                 {
-                    option.CollectorUrl = StartOptions.ButterflyHost;
-                    option.Service = StartOptions.ButterflyLoggingKey;
+                    option.CollectorUrl = OcelotStartOptions.ButterflyHost;
+                    option.Service = OcelotStartOptions.ButterflyLoggingKey;
                 });
 
-            if (StartOptions.AddSwagger)
+            if (OcelotStartOptions.AddSwagger)
                 services.AddSwaggerGen(c =>
                 {
                     c.SwaggerDoc("v1", new Info { Title = "Ocelot Administrator API", Version = "v1" });
@@ -90,7 +90,7 @@ namespace OCIApiGateway
                 //app.UseHsts();
             }
 
-            if (StartOptions.AddSwagger)
+            if (OcelotStartOptions.AddSwagger)
             {
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
