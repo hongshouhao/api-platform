@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Ocelot.Configuration.Repository;
 using Ocelot.Configuration.Setter;
 using Ocelot.Configuration.Validator;
-using OCIApiGateway.Auth;
 using OCIApiGateway.Configuration;
 using OCIApiGateway.Configuration.Validation;
 using OCIApiGateway.Exceptions;
