@@ -8,6 +8,11 @@ namespace OCIApiGateway.Configuration.Validation
         public bool IsError { get; private set; }
         public List<Error> Errors { get; private set; } = new List<Error>();
 
+        public ConfigValidationResult()
+        {
+            IsError = false;
+        }
+
         public ConfigValidationResult(string msg)
         {
             Error error = new CheckError(msg);

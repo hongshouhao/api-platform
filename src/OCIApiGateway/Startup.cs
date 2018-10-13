@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using NLog;
+using NLog.Extensions.Logging;
 using Ocelot.Cache.CacheManager;
 using Ocelot.Configuration.Repository;
 using Ocelot.Configuration.Setter;
@@ -79,15 +83,18 @@ namespace OCIApiGateway
                 });
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddNLog();
+            LogManager.LoadConfiguration("nlog.config");
+
             if (Environment.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
             }
             else
             {
-                //app.UseHsts();
+                //app.UseHsts();/*Use the HTTP Strict Transport Security Protocol(HSTS) Middleware.*/
             }
 
             if (OcelotStartOptions.AddSwagger)
@@ -99,7 +106,8 @@ namespace OCIApiGateway
                 });
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();/*Use HTTPS Redirection Middleware to redirect HTTP requests to HTTPS.*/
+            app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseCors("CorsPolicy");
             app.UseMvc();
             app.UseOcelot().Wait();

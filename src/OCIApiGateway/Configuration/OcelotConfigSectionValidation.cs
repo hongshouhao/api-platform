@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Ocelot.Configuration.File;
+using Ocelot.Configuration.Repository;
 using Ocelot.Configuration.Validator;
 using Ocelot.Errors;
 using Ocelot.Responses;
@@ -17,6 +18,19 @@ namespace OCIApiGateway.Configuration
         public OcelotConfigSectionValidation(IConfigurationValidator validator)
         {
             _validator = validator;
+        }
+
+        public async Task<ConfigValidationResult> Validate(FileConfiguration fileConfiguration)
+        {
+            Response<ConfigurationValidationResult> response = await _validator.IsValid(fileConfiguration);
+            if (response.IsError)
+            {
+                return new ConfigValidationResult(response.Errors);
+            }
+            else
+            {
+                return new ConfigValidationResult();
+            }
         }
 
         public async Task<ConfigValidationResult> Validate(params OcelotConfigSection[] sections)
@@ -45,7 +59,7 @@ namespace OCIApiGateway.Configuration
             }
             else
             {
-                return new ConfigValidationResult(new List<Error>());
+                return new ConfigValidationResult();
             }
         }
 

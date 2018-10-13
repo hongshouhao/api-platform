@@ -29,9 +29,13 @@ namespace OCIApiGateway.Configuration
             }
         }
 
-        public OcelotConfigSection[] GetAllSections()
+        public OcelotConfigSection[] GetAllSections(bool includeDisabled)
         {
-            string sql = $"select * from {_tableName} order by {nameof(OcelotConfigSection.CreateTime)} desc";
+            string where = string.Empty;
+            if (!includeDisabled)
+                where = "where enable = 1";
+
+            string sql = $"select * from {_tableName} {where} order by {nameof(OcelotConfigSection.CreateTime)} desc";
             using (IDbConnection cone = _connectionProvider.Get())
             {
                 return cone.Query<OcelotConfigSection>(sql).ToArray();
@@ -69,6 +73,7 @@ namespace OCIApiGateway.Configuration
                 $"jsonString = '{configSection.JsonString}', " +
                 $"description = '{configSection.Description}', " +
                 $"modifiedTime = '{configSection.ModifiedTime}' " +
+                $"enable = {configSection.Enable} " +
                 $"where id = {configSection.Id}";
             using (IDbConnection cone = _connectionProvider.Get())
             {
@@ -88,8 +93,8 @@ namespace OCIApiGateway.Configuration
                 throw new UserFriendlyException("数据库中已存在相同的Key.");
             }
 
-            string sql = $"insert into {_tableName} (name, jsonString, description, createTime) " +
-                $"values ('{configSection.Name}', '{configSection.JsonString}', '{configSection.Description}', '{configSection.CreateTime}')";
+            string sql = $"insert into {_tableName} (name, jsonString, description, createTime, enable) " +
+                $"values ('{configSection.Name}', '{configSection.JsonString}', '{configSection.Description}', '{configSection.CreateTime}', {configSection.Enable})";
             using (IDbConnection cone = _connectionProvider.Get())
             {
                 cone.Execute(sql);

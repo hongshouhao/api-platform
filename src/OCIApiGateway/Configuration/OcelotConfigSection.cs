@@ -9,6 +9,7 @@ namespace OCIApiGateway.Configuration
         public int Id { get; set; } = -1;
         public string Name { get; set; }
         public string JsonString { get; set; }
+        public bool Enable { get; set; } = true;
         public string Description { get; set; }
         public DateTime? CreateTime { get; set; }
         public DateTime? ModifiedTime { get; set; }

@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Ocelot.Configuration.Repository;
 using Ocelot.Configuration.Setter;
 using Ocelot.Configuration.Validator;
 using OCIApiGateway.Configuration;
 using OCIApiGateway.Configuration.Validation;
 using OCIApiGateway.Exceptions;
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
@@ -25,23 +25,21 @@ namespace OCIApiGateway.Controllers
         private readonly IFileConfigurationSetter _setter;
         private readonly IFileConfigurationRepository _repo;
         private readonly OcelotConfigSectionRepository _configSectionRepo;
-        private readonly OcelotConfigSectionValidation _configSectionValidation;
+        private readonly OcelotConfigSectionValidation _sectionValidation;
+        private readonly ILogger<ConfigurationController> _logger;
 
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        /// <param name="setter"></param>
-        /// <param name="serviceProvider"></param>
         public ConfigurationController(
             IFileConfigurationRepository repo,
             IFileConfigurationSetter setter,
             IConfiguration configuration,
-            IConfigurationValidator validator)
+            IConfigurationValidator validator,
+            ILogger<ConfigurationController> logger)
         {
             _repo = repo;
             _setter = setter;
+            _logger = logger;
             _configSectionRepo = new OcelotConfigSectionRepository(configuration);
-            _configSectionValidation = new OcelotConfigSectionValidation(validator);
+            _sectionValidation = new OcelotConfigSectionValidation(validator);
         }
 
         /// <summary>
@@ -52,7 +50,7 @@ namespace OCIApiGateway.Controllers
         [Route("[action]")]
         public Task<JsonResult> GetAllSections()
         {
-            OcelotConfigSection[] sections = _configSectionRepo.GetAllSections();
+            OcelotConfigSection[] sections = _configSectionRepo.GetAllSections(true);
             return Task.FromResult(new JsonResult(sections));
         }
 
@@ -78,9 +76,10 @@ namespace OCIApiGateway.Controllers
         [Route("[action]")]
         public async Task<IActionResult> SaveSection([Required]OcelotConfigSection ocelotSection)
         {
-            ConfigValidationResult result = await _configSectionValidation.Validate(ocelotSection);
+            ConfigValidationResult result = await _sectionValidation.Validate(ocelotSection);
             if (result.IsError)
             {
+                _logger.LogWarning(result.Errors);
                 return new BadRequestObjectResult(result.Errors);
             }
             else
@@ -121,7 +120,7 @@ namespace OCIApiGateway.Controllers
                 OcelotConfigSection section = _configSectionRepo.GetSection(ocelotSection.Name);
                 if (section.IsEmpty())
                 {
-                    ConfigValidationResult result = await _configSectionValidation.Validate(ocelotSection);
+                    ConfigValidationResult result = await _sectionValidation.Validate(ocelotSection);
                     return new JsonResult(result);
                 }
                 else
@@ -132,12 +131,33 @@ namespace OCIApiGateway.Controllers
         }
 
         /// <summary>
+        /// 映射配置检查
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> ValidateConfiguration()
+        {
+            var response = await _repo.Get();
+            if (response.IsError)
+            {
+                _logger.LogWarning(response.Errors);
+                return new BadRequestObjectResult(response.Errors);
+            }
+            else
+            {
+                ConfigValidationResult validationResult = await _sectionValidation.Validate(response.Data);
+                return new JsonResult(validationResult);
+            }
+        }
+
+        /// <summary>
         /// 获取完成映射配置
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         [Route("[action]")]
-        public async Task<JsonResult> GetCompleteConfiguration()
+        public async Task<JsonResult> GetConfiguration()
         {
             var response = await _repo.Get();
             return new JsonResult(response.Data);
@@ -149,39 +169,33 @@ namespace OCIApiGateway.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("[action]")]
-        public async Task<IActionResult> ReBuiltOcelotConfiguration()
+        public async Task<IActionResult> ReBuiltConfiguration()
         {
-            try
+            var getResponse = await _repo.Get();
+            if (getResponse.IsError)
             {
-                var sections = _configSectionRepo.GetAllSections();
-                ConfigValidationResult validationResult = await _configSectionValidation.Validate(sections);
-
+                _logger.LogWarning(getResponse.Errors);
+                return new BadRequestObjectResult(getResponse.Errors);
+            }
+            else
+            {
+                ConfigValidationResult validationResult = await _sectionValidation.Validate(getResponse.Data);
                 if (validationResult.IsError)
                 {
+                    _logger.LogWarning(validationResult.Errors);
                     return new BadRequestObjectResult(validationResult.Errors);
                 }
                 else
                 {
-                    var getResponse = await _repo.Get();
-                    if (getResponse.IsError)
+                    var setResponse = await _setter.Set(getResponse.Data);
+                    if (setResponse.IsError)
                     {
-                        return new BadRequestObjectResult(getResponse.Errors);
+                        _logger.LogWarning(setResponse.Errors);
+                        return new BadRequestObjectResult(setResponse.Errors);
                     }
-                    else
-                    {
-                        var setResponse = await _setter.Set(getResponse.Data);
-                        if (setResponse.IsError)
-                        {
-                            return new BadRequestObjectResult(setResponse.Errors);
-                        }
 
-                        return new OkObjectResult(getResponse);
-                    }
+                    return new OkObjectResult(getResponse);
                 }
-            }
-            catch (Exception e)
-            {
-                return new BadRequestObjectResult($"{e.Message}:{e.StackTrace}");
             }
         }
     }

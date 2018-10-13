@@ -19,7 +19,7 @@ namespace OCIApiGateway.Configuration
         public async Task<Response<FileConfiguration>> Get()
         {
             var fileConfiguration = new FileConfiguration();
-            OcelotConfigSection[] sections = _repository.GetAllSections();
+            OcelotConfigSection[] sections = _repository.GetAllSections(false);
             foreach (OcelotConfigSection item in sections)
             {
                 var config = JsonConvert.DeserializeObject<FileConfiguration>(item.JsonString);

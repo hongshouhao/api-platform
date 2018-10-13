@@ -14,14 +14,14 @@ namespace OCIApiGateway.Auth
 
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, AdminRoleRequirement requirement)
         {
-            if (_roles.Length > 0)
-            {
-                var userIsInRole = _roles.Any(role => context.User.IsInRole(role));
-                if (!userIsInRole)
-                {
-                    context.Fail();
-                }
-            }
+            //if (_roles.Length > 0)
+            //{
+            //    var userIsInRole = _roles.Any(role => context.User.IsInRole(role));
+            //    if (!userIsInRole)
+            //    {
+            //        context.Fail();
+            //    }
+            //}
 
             context.Succeed(requirement);
             return Task.CompletedTask;
