@@ -1,9 +1,9 @@
 [
   {
-    "AuthScheme": "ocelot_administration",
-    "Authority": "http://localhost:5000",
+    "AuthScheme": "Bearer",
+    "Authority": "http://192.168.84.124:8610",
     "ApiName": "ocelot_administration_api",
-    "ApiSecret": "ocelot_administration_secret",
+    "ApiSecret": "secret",
     "RoleClaimType": "role",
     "NameClaimType": "name",
     "EnableCaching": true,
@@ -18,7 +18,7 @@
   },
   {
     "AuthScheme": "consul_administration",
-    "Authority": "http://localhost:5000",
+    "Authority": "http://192.168.84.124:8610",
     "ApiName": "consul_administration_api",
     "ApiSecret": "consul_administration_secret",
     "RoleClaimType": "role",
@@ -36,7 +36,7 @@
 
   {
     "AuthScheme": "apitest",
-    "Authority": "http://localhost:5000",
+    "Authority": "http://192.168.84.124:8610",
     "ApiName": "test_webapi",
     "ApiSecret": "secret",
     "RoleClaimType": "role",

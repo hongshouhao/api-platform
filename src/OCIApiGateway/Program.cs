@@ -30,10 +30,7 @@ namespace OCIApiGateway
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseIISIntegration()
-                .ConfigureLogging(logging =>
-                {
-                    logging.ClearProviders();
-                })
+                .ConfigureLogging(logging => logging.ClearProviders())
                 .UseNLog()
                 .UseStartup<Startup>();
     }

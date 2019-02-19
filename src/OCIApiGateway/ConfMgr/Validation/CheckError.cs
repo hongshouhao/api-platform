@@ -1,6 +1,6 @@
 ﻿using Ocelot.Errors;
 
-namespace OCIApiGateway.Configuration.Validation
+namespace OCIApiGateway.ConfMgr.Validation
 {
     public class CheckError : Error
     {

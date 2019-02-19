@@ -1,50 +1,49 @@
 ﻿using Dapper;
-using Microsoft.Extensions.Configuration;
+using NLog;
 using OCIApiGateway.Exceptions;
 using System;
 using System.Data;
 using System.Linq;
 
-namespace OCIApiGateway.Configuration
+namespace OCIApiGateway.ConfMgr.Data
 {
-    class OcelotConfigSectionRepository
+    public class OcelotConfigSectionRepository
     {
-        string _tableName = "ConfigSections";
-        MsSqlConnectionProvider _connectionProvider;
+        private const string _tableName = "ConfigSections";
+        private readonly DbConnectionFactory _connectionProvider;
+        private readonly Logger _logger;
 
-        public OcelotConfigSectionRepository(IConfiguration configuration)
+        public OcelotConfigSectionRepository(string connectionString)
         {
-            _connectionProvider = new MsSqlConnectionProvider(configuration);
+            _logger = LogManager.GetLogger(nameof(OcelotConfigSectionRepository));
+            _connectionProvider = new DbConnectionFactory(connectionString);
         }
 
-        public OcelotConfigSection GetSection(string name)
+        public OcelotConfigSection Get(string name)
         {
-            string sql = $"select * from {_tableName} where name = '{name}'";
-            using (IDbConnection cone = _connectionProvider.Get())
+            using (IDbConnection cone = _connectionProvider.Create())
             {
-                var section = _Get(name);
-                if (section == null)
-                    section = OcelotConfigSection.Empty;
-                return section;
+                return _Get(name);
             }
         }
 
-        public OcelotConfigSection[] GetAllSections(bool includeDisabled)
+        public OcelotConfigSection[] GetAll(bool includeDisabled)
         {
             string where = string.Empty;
             if (!includeDisabled)
                 where = "where enable = 1";
 
             string sql = $"select * from {_tableName} {where} order by {nameof(OcelotConfigSection.CreateTime)} desc";
-            using (IDbConnection cone = _connectionProvider.Get())
+            _logger.Debug($"{nameof(GetAll)} sql:{sql}");
+            using (IDbConnection cone = _connectionProvider.Create())
             {
                 return cone.Query<OcelotConfigSection>(sql).ToArray();
             }
         }
 
-        public bool SectionExists(OcelotConfigSection configSection)
+        public bool Exists(string name)
         {
-            return _Get(configSection.Name) != null;
+            return _Get(name) != null;
         }
 
         public void SaveOrUpdate(OcelotConfigSection configSection)
@@ -56,46 +55,47 @@ namespace OCIApiGateway.Configuration
             }
             else
             {
+                if (Exists(configSection.Name))
+                {
+                    throw new UserFriendlyException($"[{nameof(OcelotConfigSection.Name)}={configSection.Name}]跟其他配置项重复");
+                }
+
                 configSection.CreateTime = DateTime.Now;
                 Create(configSection);
             }
         }
 
-        public void Update(OcelotConfigSection configSection)
+        void Update(OcelotConfigSection configSection)
         {
-            if (configSection.Id <= 0) throw new UserFriendlyException("数据库中没有找到此条数据.");
             if (string.IsNullOrWhiteSpace(configSection.Name)) throw new UserFriendlyException($"{nameof(OcelotConfigSection.Name)}不可以为空.");
             if (string.IsNullOrWhiteSpace(configSection.JsonString)) throw new UserFriendlyException($"{nameof(OcelotConfigSection.JsonString)}不可以为空.");
-            if (string.Equals(configSection.Name, "empty", StringComparison.CurrentCultureIgnoreCase)) throw new UserFriendlyException($"{nameof(OcelotConfigSection.Name)}不可以为\"empty\".");
 
             string sql = $"update {_tableName} set " +
                 $"name = '{configSection.Name}', " +
+                $"sectionType = {configSection.SectionType}, " +
                 $"jsonString = '{configSection.JsonString}', " +
                 $"description = '{configSection.Description}', " +
                 $"modifiedTime = '{configSection.ModifiedTime}' " +
-                $"enable = {configSection.Enable} " +
+                $"enable = {Convert.ToInt16(configSection.Enable)} " +
                 $"where id = {configSection.Id}";
-            using (IDbConnection cone = _connectionProvider.Get())
+
+            _logger.Debug($"{nameof(Update)} sql:{sql}");
+            using (IDbConnection cone = _connectionProvider.Create())
             {
                 cone.Execute(sql);
             }
         }
 
-        public void Create(OcelotConfigSection configSection)
+        void Create(OcelotConfigSection configSection)
         {
             if (string.IsNullOrWhiteSpace(configSection.Name)) throw new UserFriendlyException($"{nameof(OcelotConfigSection.Name)}不可以为空.");
             if (string.IsNullOrWhiteSpace(configSection.JsonString)) throw new UserFriendlyException($"{nameof(OcelotConfigSection.JsonString)}不可以为空.");
-            if (string.Equals(configSection.Name, "empty", StringComparison.CurrentCultureIgnoreCase)) throw new UserFriendlyException($"{nameof(OcelotConfigSection.Name)}不可以为\"empty\".");
 
-            OcelotConfigSection section = _Get(configSection.Name);
-            if (section != null)
-            {
-                throw new UserFriendlyException("数据库中已存在相同的Key.");
-            }
+            string sql = $"insert into {_tableName} (name, sectionType, jsonString, description, createTime, enable) " +
+                $"values ('{configSection.Name}', {configSection.SectionType}, '{configSection.JsonString}', '{configSection.Description}', '{configSection.CreateTime}', {Convert.ToInt16(configSection.Enable)})";
 
-            string sql = $"insert into {_tableName} (name, jsonString, description, createTime, enable) " +
-                $"values ('{configSection.Name}', '{configSection.JsonString}', '{configSection.Description}', '{configSection.CreateTime}', {configSection.Enable})";
-            using (IDbConnection cone = _connectionProvider.Get())
+            _logger.Debug($"{nameof(Create)} sql:{sql}");
+            using (IDbConnection cone = _connectionProvider.Create())
             {
                 cone.Execute(sql);
             }
@@ -103,10 +103,11 @@ namespace OCIApiGateway.Configuration
 
         public void Delete(int id)
         {
-            if (id <= 0) throw new UserFriendlyException("数据库中没有找到此条数据.");
+            if (id <= 0) return;
 
             string sql = $"delete from {_tableName} where id = {id}";
-            using (IDbConnection cone = _connectionProvider.Get())
+            _logger.Debug($"{nameof(Delete)} sql:{sql}");
+            using (IDbConnection cone = _connectionProvider.Create())
             {
                 cone.Execute(sql);
             }
@@ -115,7 +116,8 @@ namespace OCIApiGateway.Configuration
         OcelotConfigSection _Get(string name)
         {
             string sql = $"select * from {_tableName} where name = '{name}'";
-            using (IDbConnection cone = _connectionProvider.Get())
+            _logger.Debug($"{nameof(_Get)} sql:{sql}");
+            using (IDbConnection cone = _connectionProvider.Create())
             {
                 return cone.QueryFirstOrDefault<OcelotConfigSection>(sql);
             }

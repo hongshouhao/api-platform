@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace OCIApiGateway
 {
-    public static class Logger
+    public static class LogErrors
     {
         public static void LogWarning(this ILogger logger, IEnumerable<Error> errors)
         {

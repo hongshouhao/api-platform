@@ -2,9 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <DockerTargetOS>Linux</DockerTargetOS>
-    <DockerComposeProjectPath>..\..\..\oci-docker\docker-compose.dcproj</DockerComposeProjectPath>
-    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,20 +9,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.50.5" />
-    <PackageReference Include="IdentityServer4" Version="2.2.0" />
-    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1985401" />
-    <PackageReference Include="NLog.Web.AspNetCore" Version="4.7.0" />
-    <PackageReference Include="Ocelot" Version="12.0.0" />
-    <PackageReference Include="Ocelot.Cache.CacheManager" Version="0.1.0" />
-    <PackageReference Include="Ocelot.Provider.Consul" Version="0.1.2" />
-    <PackageReference Include="Ocelot.Provider.Polly" Version="0.1.0" />
-    <PackageReference Include="Ocelot.Tracing.Butterfly" Version="0.1.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="3.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="3.0.0" />
+    <PackageReference Include="Dapper" Version="1.50.7" />
+    <PackageReference Include="IdentityServer4" Version="2.3.2" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.8.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Ocelot">
+      <HintPath>C:\Users\hongsh\.nuget\packages\ocelot\13.0.0\lib\netstandard2.0\Ocelot.dll</HintPath>
+    </Reference>
+    <Reference Include="Ocelot.Cache.CacheManager">
+      <HintPath>C:\Users\hongsh\.nuget\packages\ocelot.cache.cachemanager\13.0.0\lib\netstandard2.0\Ocelot.Cache.CacheManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Ocelot.Provider.Consul">
+      <HintPath>C:\Users\hongsh\.nuget\packages\ocelot.provider.consul\13.0.0\lib\netstandard2.0\Ocelot.Provider.Consul.dll</HintPath>
+    </Reference>
+    <Reference Include="Ocelot.Provider.Polly">
+      <HintPath>C:\Users\hongsh\.nuget\packages\ocelot.provider.polly\13.0.0\lib\netstandard2.0\Ocelot.Provider.Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="Ocelot.Tracing.Butterfly">
+      <HintPath>C:\Users\hongsh\.nuget\packages\ocelot.tracing.butterfly\13.0.0\lib\netstandard2.0\Ocelot.Tracing.Butterfly.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +45,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

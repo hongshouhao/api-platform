@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Ocelot.Configuration.Repository;
 using Ocelot.Configuration.Setter;
 using Ocelot.Configuration.Validator;
-using OCIApiGateway.Configuration;
-using OCIApiGateway.Configuration.Validation;
+using OCIApiGateway.ConfMgr;
+using OCIApiGateway.ConfMgr.Data;
+using OCIApiGateway.ConfMgr.Validation;
 using OCIApiGateway.Exceptions;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
@@ -15,31 +16,31 @@ namespace OCIApiGateway.Controllers
     /// <summary>
     /// ocelot映射配置
     /// </summary>
+    [Produces("application/json")]
+    [Route("admin/Configuration")]
+    [Authorize]
     [ApiController]
     [CustomExceptionFilter]
-    [Produces("application/json")]
-    [Route("admin/[controller]")]
-    [ControllableAuthorize]
     public class ConfigurationController : Controller
     {
         private readonly IFileConfigurationSetter _setter;
-        private readonly IFileConfigurationRepository _repo;
-        private readonly OcelotConfigSectionRepository _configSectionRepo;
-        private readonly OcelotConfigSectionValidation _sectionValidation;
+        private readonly IFileConfigurationRepository _configRepo;
+        private readonly OcelotConfigSectionRepository _sectionRepo;
+        private readonly OcelotConfigSectionValidation _validator;
         private readonly ILogger<ConfigurationController> _logger;
 
         public ConfigurationController(
-            IFileConfigurationRepository repo,
+            IFileConfigurationRepository configRepo,
             IFileConfigurationSetter setter,
-            IConfiguration configuration,
+            OcelotConfigSectionRepository sectionRepo,
             IConfigurationValidator validator,
             ILogger<ConfigurationController> logger)
         {
-            _repo = repo;
             _setter = setter;
+            _configRepo = configRepo;
+            _sectionRepo = sectionRepo;
             _logger = logger;
-            _configSectionRepo = new OcelotConfigSectionRepository(configuration);
-            _sectionValidation = new OcelotConfigSectionValidation(validator);
+            _validator = new OcelotConfigSectionValidation(_sectionRepo, validator);
         }
 
         /// <summary>
@@ -48,9 +49,9 @@ namespace OCIApiGateway.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("[action]")]
-        public Task<JsonResult> GetAllSections()
+        public Task<JsonResult> GetAllSections(bool includeDisabled = true)
         {
-            OcelotConfigSection[] sections = _configSectionRepo.GetAllSections(true);
+            OcelotConfigSection[] sections = _sectionRepo.GetAll(includeDisabled);
             return Task.FromResult(new JsonResult(sections));
         }
 
@@ -63,20 +64,20 @@ namespace OCIApiGateway.Controllers
         [Route("[action]")]
         public Task<JsonResult> GetSection(string name)
         {
-            OcelotConfigSection section = _configSectionRepo.GetSection(name);
+            OcelotConfigSection section = _sectionRepo.Get(name);
             return Task.FromResult(new JsonResult(section));
         }
 
         /// <summary>
-        /// 保存映射配置 <paramref name="ocelotSection"/>
+        /// 保存映射配置 <paramref name="configSection"/>
         /// </summary>
-        /// <param name="ocelotSection">映射配置</param>
+        /// <param name="configSection">映射配置</param>
         /// <returns></returns>
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> SaveSection([Required]OcelotConfigSection ocelotSection)
+        public async Task<IActionResult> SaveSection([Required]OcelotConfigSection configSection)
         {
-            ConfigValidationResult result = await _sectionValidation.Validate(ocelotSection);
+            ConfigValidationResult result = await _validator.Validate(configSection);
             if (result.IsError)
             {
                 _logger.LogWarning(result.Errors);
@@ -84,50 +85,36 @@ namespace OCIApiGateway.Controllers
             }
             else
             {
-                _configSectionRepo.SaveOrUpdate(ocelotSection);
+                _sectionRepo.SaveOrUpdate(configSection);
                 return new OkResult();
             }
         }
 
-        /// <summary>
-        /// 保存映射配置 <paramref name="ocelotSection"/>
-        /// </summary>
-        /// <param name="ocelotSection">映射配置</param>
-        /// <returns></returns>
         [HttpPost]
         [Route("[action]")]
         public IActionResult DeleteSection(int id)
         {
-            _configSectionRepo.Delete(id);
+            _sectionRepo.Delete(id);
             return new OkResult();
         }
 
         /// <summary>
         /// 映射配置检查
         /// </summary>
-        /// <param name="ocelotSection">映射配置</param>
+        /// <param name="configSections">映射配置</param>
         /// <returns></returns>
         [HttpPost]
         [Route("[action]")]
-        public async Task<JsonResult> ValidateSection([Required]OcelotConfigSection ocelotSection)
+        public async Task<JsonResult> ValidateSections([Required, FromBody]OcelotConfigSection[] configSections)
         {
-            if (string.IsNullOrWhiteSpace(ocelotSection.Name))
+            ConfigValidationResult validationResult = await _validator.Validate(configSections);
+
+            if (validationResult.IsError)
             {
-                return new JsonResult(new ConfigValidationResult("Name不可以为空"));
+                _logger.LogWarning(validationResult.Errors);
             }
-            else
-            {
-                OcelotConfigSection section = _configSectionRepo.GetSection(ocelotSection.Name);
-                if (section.IsEmpty())
-                {
-                    ConfigValidationResult result = await _sectionValidation.Validate(ocelotSection);
-                    return new JsonResult(result);
-                }
-                else
-                {
-                    return new JsonResult(new ConfigValidationResult("Name跟其他配置项重复"));
-                }
-            }
+
+            return new JsonResult(validationResult);
         }
 
         /// <summary>
@@ -138,17 +125,8 @@ namespace OCIApiGateway.Controllers
         [Route("[action]")]
         public async Task<IActionResult> ValidateConfiguration()
         {
-            var response = await _repo.Get();
-            if (response.IsError)
-            {
-                _logger.LogWarning(response.Errors);
-                return new BadRequestObjectResult(response.Errors);
-            }
-            else
-            {
-                ConfigValidationResult validationResult = await _sectionValidation.Validate(response.Data);
-                return new JsonResult(validationResult);
-            }
+            OcelotConfigSection[] sections = _sectionRepo.GetAll(false);
+            return await ValidateSections(sections);
         }
 
         /// <summary>
@@ -159,7 +137,7 @@ namespace OCIApiGateway.Controllers
         [Route("[action]")]
         public async Task<JsonResult> GetConfiguration()
         {
-            var response = await _repo.Get();
+            var response = await _configRepo.Get();
             return new JsonResult(response.Data);
         }
 
@@ -171,7 +149,7 @@ namespace OCIApiGateway.Controllers
         [Route("[action]")]
         public async Task<IActionResult> ReBuiltConfiguration()
         {
-            var getResponse = await _repo.Get();
+            var getResponse = await _configRepo.Get();
             if (getResponse.IsError)
             {
                 _logger.LogWarning(getResponse.Errors);
@@ -179,7 +157,7 @@ namespace OCIApiGateway.Controllers
             }
             else
             {
-                ConfigValidationResult validationResult = await _sectionValidation.Validate(getResponse.Data);
+                ConfigValidationResult validationResult = await _validator.Validate(getResponse.Data);
                 if (validationResult.IsError)
                 {
                     _logger.LogWarning(validationResult.Errors);

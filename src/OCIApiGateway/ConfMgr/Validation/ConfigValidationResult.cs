@@ -1,7 +1,7 @@
 ﻿using Ocelot.Errors;
 using System.Collections.Generic;
 
-namespace OCIApiGateway.Configuration.Validation
+namespace OCIApiGateway.ConfMgr.Validation
 {
     public class ConfigValidationResult
     {

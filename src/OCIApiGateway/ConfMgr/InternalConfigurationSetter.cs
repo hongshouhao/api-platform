@@ -5,7 +5,7 @@ using Ocelot.Configuration.Setter;
 using Ocelot.Responses;
 using System.Threading.Tasks;
 
-namespace OCIApiGateway.Configuration
+namespace OCIApiGateway.ConfMgr
 {
     public class InternalConfigurationSetter : IFileConfigurationSetter
     {

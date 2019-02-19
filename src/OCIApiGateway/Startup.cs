@@ -1,86 +1,79 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Extensions.Logging;
-using Ocelot.Cache.CacheManager;
-using Ocelot.Configuration.Repository;
 using Ocelot.Configuration.Setter;
-using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using Ocelot.Provider.Consul;
-using Ocelot.Provider.Polly;
-using Ocelot.Tracing.Butterfly;
-using OCIApiGateway.Auth;
-using OCIApiGateway.Configuration;
+using OCIApiGateway.Authentication;
+using OCIApiGateway.ConfMgr;
+using OCIApiGateway.Opions;
+using OCIApiGateway.Web;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Collections.Generic;
 
 namespace OCIApiGateway
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IHostingEnvironment env)
         {
             Environment = env;
-
-            var builder = new ConfigurationBuilder();
-            builder.SetBasePath(env.ContentRootPath)
-                                  .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
-                                  .AddJsonFile($"ocelot.{env.EnvironmentName}.json", true, true)
-                                  .AddEnvironmentVariables();
-
-            Configuration = builder.Build();
-            OcelotStartOptions.Config(Configuration);
-            OcelotAPIAdminOptions.Config(Configuration);
+            Configuration = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
+                .AddJsonFile($"ocelot.{env.EnvironmentName}.json", true, true)
+                .AddEnvironmentVariables()
+                .Build();
         }
 
         public IConfiguration Configuration { get; }
         public IHostingEnvironment Environment { get; }
 
+        StartOptions _startOptions;
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IFileConfigurationRepository, ConfigurationDbRepository>();
-            services.AddSingleton<IFileConfigurationSetter, InternalConfigurationSetter>();
+            _startOptions = Configuration.GetSection(nameof(StartOptions)).Get<StartOptions>();
 
-            services.AddAuthentications(Environment, Configuration);
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy", builder =>
-                    builder.AllowAnyOrigin()
-                           .AllowAnyHeader()
-                           .AllowCredentials()
-                           .AllowAnyMethod());
-            });
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            IOcelotBuilder ocelotBuilder = services.AddOcelot(Configuration);
-
-            if (OcelotStartOptions.AddConsul)
-                ocelotBuilder.AddConsul();
-
-            if (OcelotStartOptions.AddButterfly)
-                ocelotBuilder.AddButterfly(option =>
-                {
-                    option.CollectorUrl = OcelotStartOptions.ButterflyHost;
-                    option.Service = OcelotStartOptions.ButterflyLoggingKey;
-                });
-
-            if (OcelotStartOptions.AddSwagger)
+            if (_startOptions.UseSwagger)
                 services.AddSwaggerGen(c =>
                 {
                     c.SwaggerDoc("v1", new Info { Title = "Ocelot Administrator API", Version = "v1" });
+                    c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                    {
+                        Name = "Authorization",
+                        In = "header",
+                        Type = "apiKey",
+                        Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+                    });
+                    c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                    {
+                        {"Bearer", new string[] { }},
+                    });
                 });
 
-            ocelotBuilder.AddPolly()
-                .AddCacheManager(x =>
-                {
-                    x.WithDictionaryHandle();
-                });
+            services.AddOcelotSuit(Configuration, _startOptions)
+                    .AddAuthentications(new IdsAuthOptionsReader(Environment))
+                    .AddDb(Configuration)
+                    .AddSingleton<IFileConfigurationSetter, InternalConfigurationSetter>()
+                    .AddCors(options =>
+                    {
+                        options.AddPolicy("CorsPolicy", builder =>
+                            builder.AllowAnyOrigin()
+                                   .AllowAnyHeader()
+                                   .AllowCredentials()
+                                   .AllowAnyMethod());
+                    })
+                    .AddMvc()
+                    .ConfigureApplicationPartManager(manager =>
+                     {
+                         manager.FeatureProviders.Add(new ControllerProvider());
+                     })
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
@@ -88,29 +81,30 @@ namespace OCIApiGateway
             loggerFactory.AddNLog();
             LogManager.LoadConfiguration("nlog.config");
 
-            if (Environment.IsDevelopment())
+            //if (Environment.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //    app.UseHsts();/*Use the HTTP Strict Transport Security Protocol(HSTS) Middleware.*/
+            //}
+
+            if (_startOptions.UseSwagger)
             {
-                //app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                //app.UseHsts();/*Use the HTTP Strict Transport Security Protocol(HSTS) Middleware.*/
+                app.UseSwagger()
+                   .UseSwaggerUI(c =>
+                   {
+                       c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ocelot Administrator API V1");
+                   });
             }
 
-            if (OcelotStartOptions.AddSwagger)
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ocelot Administrator API V1");
-                });
-            }
-
-            app.UseHttpsRedirection();/*Use HTTPS Redirection Middleware to redirect HTTP requests to HTTPS.*/
-            app.UseMiddleware<ErrorHandlingMiddleware>();
-            app.UseCors("CorsPolicy");
-            app.UseMvc();
-            app.UseOcelot().Wait();
+            app.UseMiddleware<ErrorHandlingMiddleware>()
+               .UseCors("CorsPolicy")
+               .UseAuthentication()
+               .UseMvc()
+               .UseOcelot()
+               .Wait();
         }
     }
 }
