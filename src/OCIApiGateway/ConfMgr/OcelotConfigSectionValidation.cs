@@ -40,7 +40,6 @@ namespace OCIApiGateway.ConfMgr
         {
             if (sections.Length == 0) return new ConfigValidationResult();
 
-            var sectionsInDb = _repository.GetAll(true);
             List<Error> errors = new List<Error>();
             foreach (OcelotConfigSection item in sections)
             {
@@ -81,17 +80,17 @@ namespace OCIApiGateway.ConfMgr
                 return new CheckError($"[{nameof(OcelotConfigSection.SectionType)}]非法.");
             }
 
-            if (type == OcelotConfigSectionType.GlobalConfiguration
-                  && section.IsEmptyGlobal())
-            {
-                return new CheckError("[GlobalConfiguration]配置项中不包含任何有效信息");
-            }
+            //if (type == OcelotConfigSectionType.GlobalConfiguration
+            //      && section.IsEmptyGlobal())
+            //{
+            //    return new CheckError("[GlobalConfiguration]配置项中不包含任何有效信息");
+            //}
 
-            if (type == OcelotConfigSectionType.ReRoutes
-                && section.IsEmptyReRoutes())
-            {
-                return new CheckError("[ReRoutes]配置项中不包含任何路由");
-            }
+            //if (type == OcelotConfigSectionType.ReRoutes
+            //    && section.IsEmptyReRoutes())
+            //{
+            //    return new CheckError("[ReRoutes]配置项中不包含任何路由");
+            //}
 
             try
             {
