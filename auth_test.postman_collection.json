@@ -1,0 +1,128 @@
+{
+	"variables": [],
+	"info": {
+		"name": "auth_test",
+		"_postman_id": "7674837e-2724-43a8-c52c-514b570f61d7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://192.168.84.124:8610/connect/token",
+			"request": {
+				"url": "http://192.168.84.124:8610/connect/token",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "auth_webapi_test_client"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret"
+						},
+						{
+							"key": "scope",
+							"value": "openid roles auth_test_webapi.write auth_test_webapi.read"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "response_type",
+							"value": "id_token"
+						},
+						{
+							"key": "username",
+							"value": "test_user_read"
+						},
+						{
+							"key": "password",
+							"value": "Pa$$word123"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:20953/api/Values",
+			"request": {
+				"url": {
+					"raw": "http://localhost:20953/api/Values?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20953",
+					"path": [
+						"api",
+						"Values"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1NDUxYmJjZmJlMDkyMDQzNGUyZmE1ZjM1YmEzYTUyIiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NTA2NTQxMDYsImV4cCI6MTU1MDY1NzcwNiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguODQuMTI0Ojg2MTAiLCJhdWQiOlsiaHR0cDovLzE5Mi4xNjguODQuMTI0Ojg2MTAvcmVzb3VyY2VzIiwiYXV0aF90ZXN0X3dlYmFwaSJdLCJjbGllbnRfaWQiOiJhdXRoX3dlYmFwaV90ZXN0X2NsaWVudCIsInN1YiI6IjMiLCJhdXRoX3RpbWUiOjE1NTA2NTQxMDYsImlkcCI6ImxvY2FsIiwicm9sZSI6WyJ0ZXN0X3JvbGVfcmVhZCIsInRlc3Rfcm9sZV93cml0ZSJdLCJzY29wZSI6WyJvcGVuaWQiLCJyb2xlcyIsImF1dGhfdGVzdF93ZWJhcGkucmVhZCJdLCJhbXIiOlsicHdkIl19.CQKh7ujZLrUeEnmA6y6YQIydXGRDofdQ3mSbPKCkVAT02iW9konKXrELCVN_TLfGdOEBep6au_AU_cC1FCr66HvAb9mlgCmJUaHW8wuef1BUFEYyfCJNxNWqerFOiuDUqzQgDPivc-psGhvg-e7jcMXJKwRyDW7MoCoAwREAPEdPccoSXY7vPJSTGhbh3WPbkY0pyQuJeHyDXKvDWnRfyAhteE0dtl6ggexoqrM30wAGZDnZqEU80SF1f5OP1cUCHGx2L-QJFKjVONcrc-szcOg8mhc2gyHMKqjy6ucQdCO76u-j5wMmlJG1r5Kfzr6gTUJSgjapwZv9UrvZQ1Nthg",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\"asdasdasd\""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.84.124:8610/.well-known/openid-configuration",
+			"request": {
+				"url": "http://192.168.84.124:8610/.well-known/openid-configuration",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.84.124:8610/connect/userinfo",
+			"request": {
+				"url": "http://192.168.84.124:8610/connect/userinfo",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1NDUxYmJjZmJlMDkyMDQzNGUyZmE1ZjM1YmEzYTUyIiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NTA2NTM4NzksImV4cCI6MTU1MDY1NzQ3OSwiaXNzIjoiaHR0cDovLzE5Mi4xNjguODQuMTI0Ojg2MTAiLCJhdWQiOlsiaHR0cDovLzE5Mi4xNjguODQuMTI0Ojg2MTAvcmVzb3VyY2VzIiwiYXV0aF90ZXN0X3dlYmFwaSJdLCJjbGllbnRfaWQiOiJhdXRoX3dlYmFwaV90ZXN0X2NsaWVudCIsInN1YiI6IjMiLCJhdXRoX3RpbWUiOjE1NTA2NTM4NzksImlkcCI6ImxvY2FsIiwicm9sZSI6WyJ0ZXN0X3JvbGVfcmVhZCIsInRlc3Rfcm9sZV93cml0ZSJdLCJzY29wZSI6WyJvcGVuaWQiLCJyb2xlcyIsImF1dGhfdGVzdF93ZWJhcGkucmVhZCIsImF1dGhfdGVzdF93ZWJhcGkud3JpdGUiXSwiYW1yIjpbInB3ZCJdfQ.UuGaFJ1UVJ7aEHOHutJcjDonZhtUeAmTSkw8A93nCa3p1WpxWSv8iuhCEK717DFZe5EVOk4dskWApbNZZzaQypYcFTsW4CVaFDUup5TzbnH9KNq6f5RYe_vuipwWsTwVV9mG_5MCjHy5qqMIlL7RAfOYorziCeOJ9l08aaV1U2A5ckZKHsQeRIDJASlum_roop3R9TC92pbRHpOcDepiT0K1QNrcazCqyjr6nFcKnxbgjvm9Richy85Vw3C0gaL0DdpDnbm8dYGIjMj9VCZYs6dsLOIz7sR86kFpIG_arldfICwzVhQQwnnZ4Z3b9gi6ZBpvz1f1ZIocYMFEDnWBMw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

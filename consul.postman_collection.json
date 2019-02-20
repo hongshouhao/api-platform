@@ -1,0 +1,67 @@
+{
+	"variables": [],
+	"info": {
+		"name": "consul",
+		"_postman_id": "9a2852bd-9296-d448-6f76-e41e4693af2f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list service",
+			"request": {
+				"url": "http://192.168.34.95:8500/v1/agent/services",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://192.168.84.124:8500/agent/services"
+			},
+			"response": []
+		},
+		{
+			"name": "get service",
+			"request": {
+				"url": "http://192.168.34.95:8500/v1/catalog/service/test_webapi",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://192.168.84.124:8500/agent/services"
+			},
+			"response": []
+		},
+		{
+			"name": "register service",
+			"request": {
+				"url": "http://192.168.34.95:8500/v1/agent/service/register",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ID\": \"redis1\",\r\n  \"Name\": \"redis\",\r\n  \"Tags\": [\r\n    \"primary\",\r\n    \"v1\"\r\n  ],\r\n  \"Address\": \"127.0.0.1\",\r\n  \"Port\": 8000,\r\n  \"Meta\": {\r\n    \"redis_version\": \"4.0\"\r\n  },\r\n  \"EnableTagOverride\": false,\r\n  \"Check\": {\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deregister service",
+			"request": {
+				"url": "http://192.168.34.95:8500/v1/agent/service/deregister/redis1",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

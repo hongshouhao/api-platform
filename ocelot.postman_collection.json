@@ -1,0 +1,212 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ocelot",
+		"_postman_id": "43dd2ae7-5fe5-ae8b-de20-90fa777bbb66",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/connect/token",
+			"request": {
+				"url": "http://192.168.84.124:8610/connect/token",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "ocelot_admin_swagger",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid full_manage",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "response_type",
+							"value": "id_token",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pa$$word123",
+							"type": "text"
+						}
+					]
+				},
+				"description": "获取  token"
+			},
+			"response": []
+		},
+		{
+			"name": "get ocelot configuration",
+			"request": {
+				"url": "http://localhost:48969/ocelot/configuration",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NTMzNmFmZTY0Yzg2ZWQ3NDU5YzE5YzQ4ZjQzNzI3IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MzcyMjk2ODYsImV4cCI6MTUzNzIzMzI4NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9yZXNvdXJjZXMiLCJvY2Vsb3RfYWRtaW5pc3RyYXRpb25fYXBpIiwiY29uc3VsX2FkbWluaXN0cmF0aW9uX2FwaSJdLCJjbGllbnRfaWQiOiJvY2Vsb3RfY29uc3VsX2FkbWluIiwic3ViIjoiMiIsImF1dGhfdGltZSI6MTUzNzIyOTY4NiwiaWRwIjoibG9jYWwiLCJyb2xlIjpbImlkZW50aXR5X2FkbWluaXN0cmF0b3IiLCJvY2Vsb3RfYWRtaW5pc3RyYXRvciIsImNvbnN1bF9hZG1pbmlzdHJhdG9yIl0sInNjb3BlIjpbIm9wZW5pZCIsInJvbGVzIiwib2NlbG90X2FkbWluaXN0cmF0aW9uIiwiY29uc3VsX2FkbWluaXN0cmF0aW9uIl0sImFtciI6WyJwd2QiXX0.fSQHpOHFI8Hg1uNu6Mewuh8vWg0pQ6EJCSYprD2fq9icrQuQ4vLPmVAFJZJ5Tvlza9-g8w6axfP4s7IFzG709TWCoBnO-mNqh4IuKc5wqWgSNyP2R5X6o3z5fMyau_MDKZyBuQa_s3RBw_wimhTI6cr_wfIB9SLfxfEx5GmZuWzgnU-Lp_UHQBfZJv2RDz_VfC1k2-51SMX6jf3IpHKNv0TS2HcXJHBNxovjOuNjGkxLyUDsLvKxMIZ3IVL4_vwQo7MF0wOHs6AOzAjK46Bz2lXetd1oqwQ4BtSt7tWMZV1ofXehuUsWnF3GVLMcnPl93z-8FoNKp6pOiLO0DYbUZA\n",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "test web api",
+			"request": {
+				"url": "http://localhost:48969/swagger/index.html",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NTMzNmFmZTY0Yzg2ZWQ3NDU5YzE5YzQ4ZjQzNzI3IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MzYyOTgxNDMsImV4cCI6MTUzNjMwMTc0MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9yZXNvdXJjZXMiLCJvY2Vsb3QiXSwiY2xpZW50X2lkIjoidGVzdGNsaWVudCIsInN1YiI6IjMiLCJhdXRoX3RpbWUiOjE1MzYyOTgxNDIsImlkcCI6ImxvY2FsIiwicm9sZSI6WyJvY2Vsb3RfYWRtaW5pdHJhdG9yIiwib2NlbG90X2FkbWluaXN0cmF0b3IiXSwic2NvcGUiOlsib2NlbG90X2FkbWluaXN0cmF0aW9uIl0sImFtciI6WyJwd2QiXX0.qGLCDS4YqztS-coHgk6FMA3JYdobD7KbAKc9SldYgnr-hhgekjc0r4kommUvFgWwJbpoffSzNNJf5W-Jb8YVRgPFC2_vekaNCOaq7aUW3NdD6elq3p0S8Djwte12wapVRmqYx7almONT57i6WKLBmdY7-mWtyBfU9jx-K4DwIAN-Upw_kTlR7x5v3XTuWlrm-7Mgys9SB8FpekNe8l2sMXdZmw_2VKJy6b_N3i1NyKnJ4EiMA3lKhHWQj0ehQrWQ0mUlUeGPcCxqu6HTBl8TlIYCmaog_aAaNgEA172JmRPB5fjsS9sPR8owZdQ5Y5TIeUTloybdXKqyRBzEt4Aotg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "test web api with auth",
+			"request": {
+				"url": "http://localhost:48969/api/Values/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NTMzNmFmZTY0Yzg2ZWQ3NDU5YzE5YzQ4ZjQzNzI3IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MzY1Nzc0MzcsImV4cCI6MTUzNjU4MTAzNywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9yZXNvdXJjZXMiLCJ0ZXN0X3dlYmFwaSJdLCJjbGllbnRfaWQiOiJ0ZXN0Y2xpZW50Iiwic3ViIjoiNCIsImF1dGhfdGltZSI6MTUzNjU3NzQzNywiaWRwIjoibG9jYWwiLCJyb2xlIjoidGVzdF93ZWJhcGlfYWNjZXNzIiwic2NvcGUiOlsib3BlbmlkIiwicm9sZXMiLCJ0ZXN0X3dlYmFwaV9hdXRoIl0sImFtciI6WyJwd2QiXX0.IB_FPp3-YdD_q4L77TWvQhhn3IIdmmpgrSVlHKSLVLB0MM7kwpjvv6Ko3UlgWV_2fEucYoXDKV3mRiCTrpIvR1otQTlFktOQu3iYY34sTfrvJ0bFd59S0Tgt8P7DSgQdK_Lvp8eQJbu-u0lvQi6n55G8_VNBxjXh9Un8nVp8s8Qo3CrDZabCTFu0hbv2frAqDV9vfUvCZKSI_BVIjv6Fgo_ujaYcZfIgxNQPEDRQTtN1zriKMOUeVsYsahypjmI9yI7GaUpyDWzduu707_dzMuygCi_4CxH9J1VBUyR3BL026y83S_J_RjOehWkltUXiW25c_0QxyU4ZmU9f1fIVzQ",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get userinfo",
+			"request": {
+				"url": "http://localhost:5000/connect/userinfo",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NTMzNmFmZTY0Yzg2ZWQ3NDU5YzE5YzQ4ZjQzNzI3IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MzcyMjkzNzUsImV4cCI6MTUzNzIzMjk3NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9yZXNvdXJjZXMiLCJvY2Vsb3RfYWRtaW5pc3RyYXRpb25fYXBpIiwiY29uc3VsX2FkbWluaXN0cmF0aW9uX2FwaSJdLCJjbGllbnRfaWQiOiJvY2Vsb3RfY29uc3VsX2FkbWluIiwic3ViIjoiMiIsImF1dGhfdGltZSI6MTUzNzE3NTU0MywiaWRwIjoibG9jYWwiLCJyb2xlIjpbImlkZW50aXR5X2FkbWluaXN0cmF0b3IiLCJvY2Vsb3RfYWRtaW5pc3RyYXRvciIsImNvbnN1bF9hZG1pbmlzdHJhdG9yIl0sInNjb3BlIjpbIm9wZW5pZCIsInJvbGVzIiwib2NlbG90X2FkbWluaXN0cmF0aW9uIiwiY29uc3VsX2FkbWluaXN0cmF0aW9uIl0sImFtciI6WyJwd2QiXX0.XWaWp4l2ajNJKMk7ygMmiA6FIoKF6hiEjRWk4jyd719VzfwfCuVZaiV7EeH1FELeE2r2q-C-W12U03zWg3tsBe9rIJbLpTfvOODUl7nlrE0XdQsoUqgo5gi1Iz66ojghYEHnfwrO5V5orgq_LjJWUdnscEqrYmaFFwRi5SXvUEjGSUUXN31fAZkpFN1Ud203UPTpm4ctEIhsZzkvtx-WmjdTct7BjR-a4PJTniF7uS9SkzJMAX1KPUZXtUFfYaxu5ECFwCQzrjBnQYHgW9Z7k6seJDLuClYI2Hn64QRqQP9N_DoPYSHQgcXyltS6rYzh5_xemFz_ej1wEWt8ApEWRQ\n",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "authorize",
+			"request": {
+				"url": {
+					"raw": "http://localhost:5000/connect/authorize?client_id=testclient&scope=openid roles test_webapi_auth&response_type=id_token&redirect_uri=/connect/userinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"connect",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "testclient",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "scope",
+							"value": "openid roles test_webapi_auth",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "response_type",
+							"value": "id_token",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "redirect_uri",
+							"value": "/connect/userinfo",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "",
+							"value": "",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "well-know",
+			"request": {
+				"url": "http://localhost:5000/.well-known/openid-configuration",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:48969/admin/Configuration/GetAllSections",
+			"request": {
+				"url": "http://localhost:48969/admin/Configuration/GetAllSections",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1NDUxYmJjZmJlMDkyMDQzNGUyZmE1ZjM1YmEzYTUyIiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NTA1NTkyMjYsImV4cCI6MTU1MDU2MjgyNiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguODQuMTI0Ojg2MTAiLCJhdWQiOlsiaHR0cDovLzE5Mi4xNjguODQuMTI0Ojg2MTAvcmVzb3VyY2VzIiwib2NlbG90X2FkbWluaXN0cmF0aW9uX2FwaSJdLCJjbGllbnRfaWQiOiJvY2Vsb3RfYWRtaW5fc3dhZ2dlciIsInN1YiI6IjEiLCJhdXRoX3RpbWUiOjE1NTA1NTkyMjYsImlkcCI6ImxvY2FsIiwicm9sZSI6WyJTa29ydWJhSWRlbnRpdHlBZG1pbkFkbWluaXN0cmF0b3IiLCJvY2Vsb3RfYWRtaW5pc3RyYXRvciIsImNvbnN1bF9hZG1pbmlzdHJhdG9yIiwiaWRlbnRpdHlfYWRtaW5pc3RyYXRvciJdLCJzY29wZSI6WyJvcGVuaWQiLCJyb2xlcyIsImZ1bGxfbWFuYWdlIiwib2NlbG90X2FkbWluaXN0cmF0aW9uIl0sImFtciI6WyJwd2QiXX0.uyEIq4iLpWc7hsFOQWpM1pKhUcPj4DpkTcAGaYwz13T21_nF6OhlaDjzYNn2wAO6zHU65sffe0xtaLvEacvKZEuj3YwkLd3vyCKrqJk44KQ0f3NELvQu6vJsY3-L4RrQ1fSR4DejVgOaXeKDhHkBpXVza6KDh-evtMqvBaI-2425Ao1N8NqAw82MZVWuGxazU2zakl2AI1pPicfJrPAYh9P4C--BINql5XdUMCGnEdkKxPANyBhjJDP9tk0ErfQq6uS7eOjFyQU3gXox2DesB0T7kE6IOmCNTVLA075OCwHaEeOcGr9GKJNj3WUJpoz5ZTta0R3Wcx9KqvczruCfEw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
