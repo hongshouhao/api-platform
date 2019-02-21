@@ -92,8 +92,10 @@ namespace OCIApiGateway.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public IActionResult DeleteSection(int id)
+        public IActionResult DeleteSection([FromBody]int id)
         {
+            if (id <= 0) return new BadRequestObjectResult("输入的id不合法");
+
             _sectionRepo.Delete(id);
             return new OkResult();
         }

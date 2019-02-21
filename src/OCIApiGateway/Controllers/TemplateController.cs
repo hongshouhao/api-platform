@@ -32,6 +32,13 @@ namespace OCIApiGateway.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        public Task _(FileConfiguration configuration)
+        {
+            return Task.CompletedTask;
+        }
+
+        [HttpGet]
+        [Route("[action]")]
         public Task<JsonResult> Get(string version)
         {
             OcelotConfigTemplate template = _repo.Get(version);
