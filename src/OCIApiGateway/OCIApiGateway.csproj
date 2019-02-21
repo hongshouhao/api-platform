@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="ocelot.postman_collection.json" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Content Remove="ocelot.postman_collection.json" />
   </ItemGroup>
 
   <ItemGroup>
