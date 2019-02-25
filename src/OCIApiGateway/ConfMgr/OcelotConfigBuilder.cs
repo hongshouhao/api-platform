@@ -30,7 +30,7 @@ namespace OCIApiGateway.ConfMgr
                         result.Aggregates.AddRange(config.Aggregates);
                         break;
                     default:
-                        throw new NotImplementedException();
+                        throw new Exception($"[{nameof(OcelotConfigSection.SectionType)}]非法.");
                 }
             }
 

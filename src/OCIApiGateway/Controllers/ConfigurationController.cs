@@ -52,7 +52,7 @@ namespace OCIApiGateway.Controllers
         public Task<JsonResult> GetAllSections(bool includeDisabled = true)
         {
             OcelotConfigSection[] sections = _sectionRepo.GetAll(includeDisabled);
-            return Task.FromResult(new JsonResult(sections));
+            return Task.FromResult(Json(sections));
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace OCIApiGateway.Controllers
         public Task<JsonResult> GetSection(string name)
         {
             OcelotConfigSection section = _sectionRepo.Get(name);
-            return Task.FromResult(new JsonResult(section));
+            return Task.FromResult(Json(section));
         }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace OCIApiGateway.Controllers
             if (result.IsError)
             {
                 _logger.LogWarning(result.Errors);
-                return new BadRequestObjectResult(result.Errors);
+                return BadRequest(result.Errors);
             }
             else
             {
                 _sectionRepo.SaveOrUpdate(configSection);
-                return new OkResult();
+                return Ok(null);
             }
         }
 
@@ -94,10 +94,10 @@ namespace OCIApiGateway.Controllers
         [Route("[action]")]
         public IActionResult DeleteSection([FromBody]int id)
         {
-            if (id <= 0) return new BadRequestObjectResult("输入的id不合法");
+            if (id <= 0) return BadRequest("输入的id不合法");
 
             _sectionRepo.Delete(id);
-            return new OkResult();
+            return Ok();
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace OCIApiGateway.Controllers
                 _logger.LogWarning(validationResult.Errors);
             }
 
-            return new JsonResult(validationResult);
+            return Json(validationResult);
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace OCIApiGateway.Controllers
         public async Task<JsonResult> GetConfiguration()
         {
             var response = await _configRepo.Get();
-            return new JsonResult(response.Data);
+            return Json(response.Data);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace OCIApiGateway.Controllers
             if (getResponse.IsError)
             {
                 _logger.LogWarning(getResponse.Errors);
-                return new BadRequestObjectResult(getResponse.Errors);
+                return BadRequest(getResponse.Errors);
             }
             else
             {
@@ -163,7 +163,7 @@ namespace OCIApiGateway.Controllers
                 if (validationResult.IsError)
                 {
                     _logger.LogWarning(validationResult.Errors);
-                    return new BadRequestObjectResult(validationResult.Errors);
+                    return BadRequest(validationResult.Errors);
                 }
                 else
                 {
@@ -171,10 +171,10 @@ namespace OCIApiGateway.Controllers
                     if (setResponse.IsError)
                     {
                         _logger.LogWarning(setResponse.Errors);
-                        return new BadRequestObjectResult(setResponse.Errors);
+                        return BadRequest(setResponse.Errors);
                     }
 
-                    return new OkObjectResult(getResponse);
+                    return Ok(getResponse);
                 }
             }
         }

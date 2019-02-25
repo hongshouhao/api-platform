@@ -75,7 +75,7 @@ namespace OCIApiGateway.ConfMgr.Data
                 $"sectionType = {configSection.SectionType}, " +
                 $"jsonString = '{configSection.JsonString}', " +
                 $"description = '{configSection.Description}', " +
-                $"modifiedTime = '{configSection.ModifiedTime}' " +
+                $"modifiedTime = '{configSection.ModifiedTime}', " +
                 $"enable = {Convert.ToInt16(configSection.Enable)} " +
                 $"where id = {configSection.Id}";
 

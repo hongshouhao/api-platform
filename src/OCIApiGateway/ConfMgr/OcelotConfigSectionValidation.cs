@@ -72,25 +72,10 @@ namespace OCIApiGateway.ConfMgr
                 return new CheckError($"[{nameof(OcelotConfigSection.JsonString)}]不能为空.");
             }
 
-            OcelotConfigSectionType type = (OcelotConfigSectionType)section.SectionType;
-
-            if (type != OcelotConfigSectionType.GlobalConfiguration
-                && type != OcelotConfigSectionType.ReRoutes)
+            if (section.SectionType > 4 || section.SectionType < 1)
             {
                 return new CheckError($"[{nameof(OcelotConfigSection.SectionType)}]非法.");
             }
-
-            //if (type == OcelotConfigSectionType.GlobalConfiguration
-            //      && section.IsEmptyGlobal())
-            //{
-            //    return new CheckError("[GlobalConfiguration]配置项中不包含任何有效信息");
-            //}
-
-            //if (type == OcelotConfigSectionType.ReRoutes
-            //    && section.IsEmptyReRoutes())
-            //{
-            //    return new CheckError("[ReRoutes]配置项中不包含任何路由");
-            //}
 
             try
             {
