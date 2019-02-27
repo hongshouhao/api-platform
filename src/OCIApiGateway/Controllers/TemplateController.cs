@@ -39,6 +39,13 @@ namespace OCIApiGateway.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        public Task<JsonResult> GetAll()
+        {
+            return Task.FromResult(new JsonResult(_repo.GetAll()));
+        }
+
+        [HttpGet]
+        [Route("[action]")]
         public Task<JsonResult> Get(string version)
         {
             OcelotConfigTemplate template = _repo.Get(version);
@@ -57,11 +64,18 @@ namespace OCIApiGateway.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public Task Save([Required]OcelotConfigTemplate template)
+        public Task Save([Required, FromBody]OcelotConfigTemplate template)
         {
             _repo.SaveOrUpdate(template);
             return Task.CompletedTask;
         }
 
+        [HttpPost]
+        [Route("[action]")]
+        public Task Delete([FromBody]int id)
+        {
+            _repo.Delete(id);
+            return Task.CompletedTask;
+        }
     }
 }

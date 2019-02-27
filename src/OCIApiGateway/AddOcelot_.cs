@@ -38,7 +38,6 @@ namespace OCIApiGateway
             if (startOptions.UseConsul)
                 ocelotBuilder.AddConsul();
 
-            startOptions.OciHostName = Dns.GetHostName();
             if (startOptions.UseButterfly)
                 ocelotBuilder.AddButterfly(option =>
                 {
