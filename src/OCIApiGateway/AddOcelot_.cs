@@ -42,7 +42,7 @@ namespace OCIApiGateway
                 ocelotBuilder.AddButterfly(option =>
                 {
                     option.CollectorUrl = startOptions.ButterflyHost;
-                    option.Service = startOptions.ButterflyLoggingKey;
+                    option.Service = startOptions.ButterflyLoggingKey.Replace("-", "_");
                 });
 
             ocelotBuilder.AddPolly()

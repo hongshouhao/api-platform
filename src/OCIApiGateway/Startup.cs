@@ -10,10 +10,13 @@ using Ocelot.Configuration.Setter;
 using Ocelot.Middleware;
 using OCIApiGateway.Authentication;
 using OCIApiGateway.ConfMgr;
+using OCIApiGateway.Controllers;
 using OCIApiGateway.Opions;
 using OCIApiGateway.Web;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OCIApiGateway
 {
@@ -56,10 +59,11 @@ namespace OCIApiGateway
                     });
                 });
 
-            services.AddOcelotSuit(Configuration, _startOptions)
-                    .AddAuthentications(new IdsAuthOptionsReader(Environment))
-                    .AddDb(Configuration)
+            services.AddDb(Configuration)
                     .AddSingleton<IFileConfigurationSetter, InternalConfigurationSetter>()
+                    .AddOcelotSuit(Configuration, _startOptions)
+                    .AddAuthentications(new IdsAuthOptionsReader(Environment))
+
                     .AddCors(options =>
                     {
                         options.AddPolicy("CorsPolicy", builder =>
@@ -73,10 +77,15 @@ namespace OCIApiGateway
                      {
                          manager.FeatureProviders.Add(new ControllerProvider());
                      })
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                    .AddJsonOptions(options =>
+                    {
+                        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+                    });
         }
 
-        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, ConfigurationController configurationController,
+            ILoggerFactory loggerFactory)
         {
             loggerFactory.AddNLog();
             LogManager.LoadConfiguration("nlog.config");
@@ -103,8 +112,9 @@ namespace OCIApiGateway
                .UseCors("CorsPolicy")
                .UseAuthentication()
                .UseMvc()
-               .UseOcelot()
-               .Wait();
+               .UseOcelot().Wait();
+
+            configurationController.ReBuiltConfiguration().Wait();
         }
     }
 }

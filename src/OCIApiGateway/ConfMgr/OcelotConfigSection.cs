@@ -10,7 +10,7 @@ namespace OCIApiGateway.ConfMgr
         public int SectionType { get; set; } = (int)OcelotConfigSectionType.ReRoutes;
         public string Name { get; set; }
         public string JsonString { get; set; }
-        public bool Enable { get; set; } = true;
+        public bool Enable { get; set; } = false;
         public string Description { get; set; }
         public DateTime? CreateTime { get; set; }
         public DateTime? ModifiedTime { get; set; }
