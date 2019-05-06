@@ -1,0 +1,19 @@
+[
+  {
+    "AuthScheme": "Bearer",
+    "Authority": "http://192.168.122.17:8610",
+    "ApiName": "api-gateway",
+    "ApiSecret": "secret",
+    "RoleClaimType": "role",
+    "NameClaimType": "name",
+    "EnableCaching": true,
+    "ClaimsIssuer": null,
+    "CacheDuration": 10,
+    "RequireHttpsMetadata": false,
+    "SupportedTokens": "Both",
+    "TokenRetrievalOptions": {
+      "Source": "FromAuthorizationHeader",
+      "NameOrSchema": "Bearer"
+    }
+  }
+]

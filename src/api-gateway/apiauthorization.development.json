@@ -1,0 +1,36 @@
+[
+  {
+    "AuthScheme": "Bearer",
+    "Authority": "http://192.168.84.124:8610",
+    "ApiName": "ocelot_config",
+    "ApiSecret": "secret",
+    "RoleClaimType": "role",
+    "NameClaimType": "name",
+    "EnableCaching": true,
+    "ClaimsIssuer": null,
+    "CacheDuration": 10,
+    "RequireHttpsMetadata": false,
+    "SupportedTokens": "Both",
+    "TokenRetrievalOptions": {
+      "Source": "FromAuthorizationHeader",
+      "NameOrSchema": "Bearer"
+    }
+  },
+  {
+    "AuthScheme": "apitest",
+    "Authority": "http://192.168.84.124:8610",
+    "ApiName": "test_webapi",
+    "ApiSecret": "secret",
+    "RoleClaimType": "role",
+    "NameClaimType": "name",
+    "EnableCaching": true,
+    "ClaimsIssuer": null,
+    "CacheDuration": 10,
+    "RequireHttpsMetadata": false,
+    "SupportedTokens": "Both",
+    "TokenRetrievalOptions": {
+      "Source": "FromAuthorizationHeader",
+      "NameOrSchema": "Bearer"
+    }
+  }
+]
