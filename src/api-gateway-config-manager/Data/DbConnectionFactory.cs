@@ -1,11 +1,11 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace ApiGatewayManager.ConfMgr.Data
+namespace ApiGatewayManager.Data
 {
     public class DbConnectionFactory
     {
-        string _connectionString = null;
+        private readonly string _connectionString = null;
         public DbConnectionFactory(string connectionString)
         {
             _connectionString = connectionString;

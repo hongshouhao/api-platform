@@ -9,10 +9,8 @@ using Ocelot.Configuration.Repository;
 using Ocelot.DependencyInjection;
 using Ocelot.Provider.Consul;
 using Ocelot.Provider.Polly;
-using Ocelot.Tracing.Butterfly;
 using System;
 using System.Linq;
-using System.Net;
 
 namespace ApiGateway
 {
@@ -22,7 +20,8 @@ namespace ApiGateway
         {
             string connectionString = configuration.GetConnectionString("DBConnection");
             if (string.IsNullOrWhiteSpace(connectionString)) throw new Exception("数据库连接字符串为空.");
-            services.AddSingleton<IFileConfigurationRepository>(new MsDbConfigurationRepository(connectionString));
+            services.AddSingleton<IFileConfigurationRepository>(new ConfigurationDbRepository(connectionString))
+                    .AddAuthentications(new IdentityAuthOptionsDb(connectionString));
             return services;
         }
 
@@ -36,14 +35,6 @@ namespace ApiGateway
                 ocelotBuilder.AddConsul();
             }
 
-            string butterflyHost = configuration.GetConnectionString("ButterflyHost");
-            if (!string.IsNullOrWhiteSpace(butterflyHost))
-                ocelotBuilder.AddButterfly(option =>
-                {
-                    option.CollectorUrl = butterflyHost;
-                    option.Service = $"apigate_{Dns.GetHostName()}".Replace("-", "_");
-                });
-
             ocelotBuilder.AddPolly()
                 .AddCacheManager(x =>
                 {
@@ -54,10 +45,10 @@ namespace ApiGateway
         }
 
         public static IServiceCollection AddAuthentications(this IServiceCollection services,
-            IdsAuthOptionsReader idsAuthOptionsReader)
+            IIdentityAuthOptionsProvider authOptionsProvider)
         {
             AuthenticationBuilder builder = services.AddAuthentication();
-            foreach (var authop in idsAuthOptionsReader.AuthOptions)
+            foreach (var authop in authOptionsProvider.GetOptions())
             {
                 builder.AddIdentityServerAuthentication(authop.AuthScheme, authop.Build());
             }

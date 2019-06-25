@@ -1,6 +1,6 @@
 ﻿using Ocelot.Errors;
 
-namespace ApiGatewayManager.ConfMgr.Validation
+namespace ApiGatewayManager.OcelotConf.Validation
 {
     public class CheckError : Error
     {

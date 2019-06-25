@@ -2,18 +2,13 @@
 using Newtonsoft.Json;
 using System;
 using System.IO;
-using System.Linq;
 
 namespace ApiGateway.Authentication
 {
-    public class IdsAuthOptionsReader
+    public class IdentityAuthOptionsJsonFile : IIdentityAuthOptionsProvider
     {
-        /// <summary>
-        /// 身份验证方案
-        /// </summary>
-        public IdsAuthOptions[] AuthOptions { get; }
-
-        public IdsAuthOptionsReader(IHostingEnvironment env)
+        private readonly IdentityAuthOptions[] _options;
+        public IdentityAuthOptionsJsonFile(IHostingEnvironment env)
         {
             string jsonFile = Path.Combine(AppContext.BaseDirectory, $"apiauthorization.json");
             string jsonEnv = Path.Combine(AppContext.BaseDirectory, $"apiauthorization.{env.EnvironmentName}.json");
@@ -22,28 +17,31 @@ namespace ApiGateway.Authentication
                 jsonFile = jsonEnv;
             }
 
-            IdsAuthOptions[] options;
             if (File.Exists(jsonFile))
             {
                 string text = File.ReadAllText(jsonFile);
-                options = JsonConvert.DeserializeObject<IdsAuthOptions[]>(text);
-                foreach (var authop in options)
+                _options = JsonConvert.DeserializeObject<IdentityAuthOptions[]>(text);
+                foreach (var authop in _options)
                 {
                     if (string.IsNullOrWhiteSpace(authop.ApiName))
-                        throw new Exception("配置项错误: [apiauthoptions.json]中某项[ApiName]为空");
+                        throw new Exception($"配置错误: [{nameof(IdentityAuthOptions.ApiName)}]不可以为空");
 
                     if (string.IsNullOrWhiteSpace(authop.Authority))
-                        throw new Exception("配置项错误: [apiauthoptions.json]中某项[Authority]为空");
+                        throw new Exception($"配置错误: [{nameof(IdentityAuthOptions.Authority)}]不可以为空");
 
                     if (string.IsNullOrWhiteSpace(authop.AuthScheme))
-                        throw new Exception("配置项错误: [apiauthoptions.json]中某项[AuthScheme]为空");
+                        throw new Exception($"配置错误: [{nameof(IdentityAuthOptions.AuthScheme)}]不可以为空");
                 }
             }
             else
             {
-                options = new IdsAuthOptions[] { };
+                _options = new IdentityAuthOptions[] { };
             }
-            AuthOptions = options;
+        }
+
+        public IdentityAuthOptions[] GetOptions()
+        {
+            return _options;
         }
     }
 }

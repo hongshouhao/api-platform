@@ -1,11 +1,12 @@
-﻿using Dapper;
+﻿using ApiGatewayManager.Exceptions;
+using ApiGatewayManager.OcelotConf;
+using Dapper;
 using NLog;
-using ApiGatewayManager.Exceptions;
 using System;
 using System.Data;
 using System.Linq;
 
-namespace ApiGatewayManager.ConfMgr.Data
+namespace ApiGatewayManager.Data
 {
     public class OcelotConfigSectionRepository
     {
@@ -19,23 +20,23 @@ namespace ApiGatewayManager.ConfMgr.Data
             _connectionProvider = new DbConnectionFactory(connectionString);
         }
 
-        public OcelotConfigItem Get(string name)
+        public OcelotConfigSection Get(string name)
         {
             return _Get(name);
         }
 
-        public OcelotConfigItem[] GetAll(bool includeDisabled)
+        public OcelotConfigSection[] GetAll(bool includeDisabled)
         {
             string where = string.Empty;
             if (!includeDisabled)
                 where = "where enable = 1";
 
-            string sql = $"select * from {_tableName} {where} order by {nameof(OcelotConfigItem.CreateTime)} desc";
+            string sql = $"select * from {_tableName} {where} order by {nameof(OcelotConfigSection.CreateTime)} desc";
             _logger.Debug($"{nameof(GetAll)} sql:{sql}");
             using (IDbConnection cone = _connectionProvider.Create())
             {
                 cone.Open();
-                return cone.Query<OcelotConfigItem>(sql).ToArray();
+                return cone.Query<OcelotConfigSection>(sql).ToArray();
             }
         }
 
@@ -44,7 +45,7 @@ namespace ApiGatewayManager.ConfMgr.Data
             return _Get(name) != null;
         }
 
-        public void SaveOrUpdate(OcelotConfigItem configSection)
+        public void SaveOrUpdate(OcelotConfigSection configSection)
         {
             if (Exists(configSection.Name))
             {
@@ -58,7 +59,7 @@ namespace ApiGatewayManager.ConfMgr.Data
             }
         }
 
-        void Update(OcelotConfigItem configSection)
+        void Update(OcelotConfigSection configSection)
         {
             Check(configSection);
 
@@ -77,7 +78,7 @@ namespace ApiGatewayManager.ConfMgr.Data
             }
         }
 
-        void Create(OcelotConfigItem configSection)
+        void Create(OcelotConfigSection configSection)
         {
             Check(configSection);
 
@@ -93,10 +94,12 @@ namespace ApiGatewayManager.ConfMgr.Data
             }
         }
 
-        static void Check(OcelotConfigItem configSection)
+        static void Check(OcelotConfigSection configSection)
         {
-            if (string.IsNullOrWhiteSpace(configSection.Name)) throw new UserFriendlyException($"{nameof(OcelotConfigItem.Name)}不可以为空.");
-            if (string.IsNullOrWhiteSpace(configSection.JsonString)) throw new UserFriendlyException($"{nameof(OcelotConfigItem.JsonString)}不可以为空.");
+            if (string.IsNullOrWhiteSpace(configSection.Name))
+                throw new UserFriendlyException($"{nameof(OcelotConfigSection.Name)}不可以为空.");
+            if (string.IsNullOrWhiteSpace(configSection.JsonString))
+                throw new UserFriendlyException($"{nameof(OcelotConfigSection.JsonString)}不可以为空.");
         }
 
         public void Delete(string name)
@@ -110,14 +113,14 @@ namespace ApiGatewayManager.ConfMgr.Data
             }
         }
 
-        OcelotConfigItem _Get(string name)
+        OcelotConfigSection _Get(string name)
         {
             string sql = $"select * from {_tableName} where name = '{name}'";
             _logger.Debug($"{nameof(_Get)} sql:{sql}");
             using (IDbConnection cone = _connectionProvider.Create())
             {
                 cone.Open();
-                return cone.QueryFirstOrDefault<OcelotConfigItem>(sql);
+                return cone.QueryFirstOrDefault<OcelotConfigSection>(sql);
             }
         }
     }

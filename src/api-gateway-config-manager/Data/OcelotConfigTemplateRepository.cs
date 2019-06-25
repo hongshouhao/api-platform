@@ -1,11 +1,12 @@
-﻿using Dapper;
+﻿using ApiGatewayManager.Exceptions;
+using ApiGatewayManager.OcelotConf;
+using Dapper;
 using NLog;
-using ApiGatewayManager.Exceptions;
 using System;
 using System.Data;
 using System.Linq;
 
-namespace ApiGatewayManager.ConfMgr.Data
+namespace ApiGatewayManager.Data
 {
     public class OcelotConfigTemplateRepository
     {

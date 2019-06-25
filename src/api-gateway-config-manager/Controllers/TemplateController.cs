@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ApiGatewayManager.Data;
+using ApiGatewayManager.Exceptions;
+using ApiGatewayManager.OcelotConf;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Ocelot.Configuration.File;
-using ApiGatewayManager.ConfMgr;
-using ApiGatewayManager.ConfMgr.Data;
-using ApiGatewayManager.Exceptions;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;

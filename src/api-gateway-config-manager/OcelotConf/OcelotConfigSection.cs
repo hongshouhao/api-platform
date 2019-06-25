@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace ApiGatewayManager.ConfMgr
+namespace ApiGatewayManager.OcelotConf
 {
-    public class OcelotConfigItem
+    public class OcelotConfigSection
     {
-        public OcelotConfigItem() { }
+        public OcelotConfigSection() { }
 
         public string Name { get; set; }
         public string JsonString { get; set; }

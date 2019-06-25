@@ -1,5 +1,4 @@
-﻿using ApiGateway.Authentication;
-using ApiGateway.Configuration;
+﻿using ApiGateway.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -31,7 +30,6 @@ namespace ApiGateway
                     .AddSingleton<IFileConfigurationSetter, InternalConfigurationSetter>()
                     .AddOcelotSuit(Configuration)
                     .AddDiscoveryClient(Configuration)
-                    .AddAuthentications(new IdsAuthOptionsReader(Environment))
                     .AddCors(options =>
                     {
                         options.AddPolicy("CorsPolicy", builder =>

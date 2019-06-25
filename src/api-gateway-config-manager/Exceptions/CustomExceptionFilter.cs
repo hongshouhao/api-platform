@@ -7,9 +7,9 @@ namespace ApiGatewayManager.Exceptions
     {
         public override void OnException(ExceptionContext context)
         {
-            if (context.Exception is UserFriendlyException userFriendlyException)
+            if (context.Exception is UserFriendlyException friendlyException)
             {
-                context.Result = new BadRequestObjectResult(userFriendlyException.Message);
+                context.Result = new BadRequestObjectResult(friendlyException.Message);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using ApiGatewayManager.ConfMgr.Data;
+﻿using ApiGatewayManager.Data;
+using ApiGatewayManager.Ids4Conf;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Ocelot.DependencyInjection;
@@ -16,7 +17,8 @@ namespace ApiGatewayManager
             if (string.IsNullOrWhiteSpace(connectionString)) throw new Exception("数据库连接字符串为空.");
             services.AddSingleton(new OcelotConfigSectionRepository(connectionString));
             services.AddSingleton(new OcelotConfigTemplateRepository(connectionString));
-            services.AddSingleton(new OcelotFullConfigRepository(connectionString));
+            services.AddSingleton(new OcelotCompleteConfigRepository(connectionString));
+            services.AddSingleton(new IdentityAuthOptionsConfigRepository(connectionString));
             return services;
         }
 

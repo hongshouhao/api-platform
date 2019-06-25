@@ -3,14 +3,14 @@ using Ocelot.Configuration.File;
 using System.Collections.Generic;
 using System;
 
-namespace ApiGatewayManager.ConfMgr
+namespace ApiGatewayManager.OcelotConf
 {
     public static class OcelotConfigBuilder
     {
-        public static FileConfiguration Build(this IEnumerable<OcelotConfigItem> items)
+        public static FileConfiguration Build(this IEnumerable<OcelotConfigSection> sections)
         {
             FileConfiguration result = new FileConfiguration();
-            foreach (OcelotConfigItem item in items)
+            foreach (OcelotConfigSection item in sections)
             {
                 var config = JsonConvert.DeserializeObject<FileConfiguration>(item.JsonString);
                 if (item.IsGlobal)

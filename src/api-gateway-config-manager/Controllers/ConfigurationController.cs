@@ -1,7 +1,7 @@
-﻿using ApiGatewayManager.ConfMgr;
-using ApiGatewayManager.ConfMgr.Data;
-using ApiGatewayManager.ConfMgr.Validation;
+﻿using ApiGatewayManager.Data;
 using ApiGatewayManager.Exceptions;
+using ApiGatewayManager.OcelotConf;
+using ApiGatewayManager.OcelotConf.Validation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -24,23 +24,20 @@ namespace ApiGatewayManager.Controllers
     public class ConfigurationController : Controller
     {
         private readonly OcelotConfigSectionRepository _sectionRepo;
-        private readonly OcelotFullConfigRepository _fullConfigRepo;
-        private readonly OcelotConfigItemValidation _validator;
-        private readonly ILogger<ConfigurationController> _logger;
-        private readonly ILogger _adminLogger;
+        private readonly OcelotCompleteConfigRepository _fullConfigRepo;
+        private readonly OcelotConfigValidation _validator;
+
+        private readonly ILogger _logger;
 
         public ConfigurationController(
-            IFileConfigurationSetter setter,
             OcelotConfigSectionRepository sectionRepo,
-            OcelotFullConfigRepository fullConfigRepo,
-            IConfigurationValidator validator,
-            ILogger<ConfigurationController> logger)
+            OcelotCompleteConfigRepository fullConfigRepo,
+            IConfigurationValidator validator)
         {
-            _logger = logger;
             _sectionRepo = sectionRepo;
             _fullConfigRepo = fullConfigRepo;
-            _validator = new OcelotConfigItemValidation(_sectionRepo, validator);
-            _adminLogger = LogManager.GetLogger("apigatewayadmin");
+            _validator = new OcelotConfigValidation(_sectionRepo, validator);
+            _logger = LogManager.GetLogger("apigatewayadmin");
         }
 
         /// <summary>
@@ -49,7 +46,7 @@ namespace ApiGatewayManager.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("[action]")]
-        public OcelotConfigItem[] GetAllSections(bool includeDisabled = true)
+        public OcelotConfigSection[] GetAllSections(bool includeDisabled = true)
         {
             return _sectionRepo.GetAll(includeDisabled);
         }
@@ -61,7 +58,7 @@ namespace ApiGatewayManager.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("[action]")]
-        public OcelotConfigItem GetSection([Required, FromQuery]string name)
+        public OcelotConfigSection GetSection([Required, FromQuery]string name)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentNullException(nameof(name));
@@ -75,16 +72,18 @@ namespace ApiGatewayManager.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("[action]")]
-        public IActionResult SaveSection([Required]OcelotConfigItem configSection)
+        public IActionResult SaveSection([Required]OcelotConfigSection configSection)
         {
             ConfigValidationResult result = _validator.Validate(configSection).Result;
             if (result.IsError)
             {
+                _logger.Warn("Ocelot配置片段错误: " + JsonConvert.SerializeObject(result.Errors));
                 return BadRequest(result.Errors);
             }
             else
             {
                 _sectionRepo.SaveOrUpdate(configSection);
+                _logger.Info("保存Ocelot配置片段: " + JsonConvert.SerializeObject(configSection));
                 return Ok(configSection);
             }
         }
@@ -95,6 +94,7 @@ namespace ApiGatewayManager.Controllers
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentNullException(nameof(name));
+            _logger.Info($"删除Ocelot配置片段: {name}");
             _sectionRepo.Delete(name);
         }
 
@@ -124,6 +124,7 @@ namespace ApiGatewayManager.Controllers
             }
 
             var config = _fullConfigRepo.Create(configItems, description);
+            _logger.Info($"生成新Ocelot配置: {JsonConvert.SerializeObject(config)}");
             return Ok(config);
         }
 
@@ -135,11 +136,12 @@ namespace ApiGatewayManager.Controllers
                 throw new ArgumentNullException(nameof(id));
 
             _fullConfigRepo.Enable(id);
+            _logger.Info($"启用Ocelot配置: {id}");
         }
 
         [HttpGet]
         [Route("[action]")]
-        public OcelotFullConfig[] GetAllConfigs()
+        public OcelotCompleteConfig[] GetAllConfigs()
         {
             return _fullConfigRepo.GetAll();
         }
@@ -152,6 +154,7 @@ namespace ApiGatewayManager.Controllers
                 throw new ArgumentNullException(nameof(id));
 
             _fullConfigRepo.Delete(id);
+            _logger.Info($"删除Ocelot配置: {id}");
         }
     }
 }

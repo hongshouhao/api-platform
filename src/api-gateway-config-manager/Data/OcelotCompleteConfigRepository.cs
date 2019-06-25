@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using ApiGatewayManager.OcelotConf;
+using Dapper;
 using Newtonsoft.Json;
 using NLog;
 using Ocelot.Configuration.File;
@@ -7,17 +8,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace ApiGatewayManager.ConfMgr.Data
+namespace ApiGatewayManager.Data
 {
-    public class OcelotFullConfigRepository
+    public class OcelotCompleteConfigRepository
     {
         private readonly Logger _debugLogger;
         private readonly Logger _adminLogger;
         private const string _tableName = "Configs";
         private readonly DbConnectionFactory _connectionProvider;
-        private OcelotConfigSectionRepository _configItemRepository;
+        private readonly OcelotConfigSectionRepository _configItemRepository;
 
-        public OcelotFullConfigRepository(string connectionString)
+        public OcelotCompleteConfigRepository(string connectionString)
         {
             _debugLogger = LogManager.GetCurrentClassLogger();
             _adminLogger = LogManager.GetLogger("apigatewayadmin");
@@ -27,16 +28,16 @@ namespace ApiGatewayManager.ConfMgr.Data
 
         }
 
-        public OcelotFullConfig[] GetAll()
+        public OcelotCompleteConfig[] GetAll()
         {
-            string sql = $"select * from {_tableName} order by {nameof(OcelotConfigItem.CreateTime)} desc";
+            string sql = $"select * from {_tableName} order by {nameof(OcelotConfigSection.CreateTime)} desc";
 
             _debugLogger.Debug($"{nameof(GetAll)} sql:{sql}");
 
             using (IDbConnection cone = _connectionProvider.Create())
             {
                 cone.Open();
-                return cone.Query<OcelotFullConfig>(sql).ToArray();
+                return cone.Query<OcelotCompleteConfig>(sql).ToArray();
             }
         }
 
@@ -60,14 +61,14 @@ namespace ApiGatewayManager.ConfMgr.Data
             }
         }
 
-        public OcelotFullConfig Create(OcelotConfigItem[] configItems, string description)
+        public OcelotCompleteConfig Create(OcelotConfigSection[] configItems, string description)
         {
             FileConfiguration configuration = configItems.Build();
 
             string json = JsonConvert.SerializeObject(configuration);
             var uid = Guid.NewGuid();
 
-            OcelotFullConfig config = new OcelotFullConfig
+            OcelotCompleteConfig config = new OcelotCompleteConfig
             {
                 Id = uid,
                 CreateTime = DateTime.Now,
@@ -139,8 +140,7 @@ namespace ApiGatewayManager.ConfMgr.Data
             {
                 conn.Open();
 
-                SqlCommand command = new SqlCommand(sql, conn);
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = new SqlCommand(sql, conn).ExecuteReader())
                 {
                     if (reader.Read())
                     {

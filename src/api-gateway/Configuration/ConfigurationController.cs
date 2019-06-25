@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using NLog;
 using Ocelot.Configuration.Repository;
 using Ocelot.Configuration.Setter;
-using Ocelot.Configuration.Validator;
 
 namespace ApiGateway.Configuration
 {
@@ -23,10 +22,9 @@ namespace ApiGateway.Configuration
         public ConfigurationController(
             IFileConfigurationRepository configDbRepo,
             IInternalConfigurationRepository configUsingRepo,
-            IFileConfigurationSetter setter,
-            IConfigurationValidator validator)
+            IFileConfigurationSetter setter)
         {
-            _logger = LogManager.GetCurrentClassLogger();
+            _logger = LogManager.GetLogger("apigatewayadmin");
             _setter = setter;
             _configRepo = configDbRepo;
             _configUsingRepo = configUsingRepo;

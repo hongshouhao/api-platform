@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ApiGatewayManager.ConfMgr
+namespace ApiGatewayManager.OcelotConf
 {
     public class OcelotConfigTemplate
     {
