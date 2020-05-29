@@ -2,7 +2,7 @@
 {
     public partial class IdentityAuthOptions
     {
-        public string AuthScheme { get; set; } = "Bearer";
+        public string AuthScheme { get; set; } = "Default";
         public string Authority { get; set; }
         public string ApiName { get; set; }
         public string ApiSecret { get; set; }
@@ -10,7 +10,7 @@
         public string NameClaimType { get; set; } = "name";
         public bool EnableCaching { get; set; }
         public string ClaimsIssuer { get; set; }
-        public int CacheDuration { get; set; }
+        public int CacheDuration { get; set; } = 10;
         public bool RequireHttpsMetadata { get; set; }
 
         public string ForwardDefault { get; set; }
@@ -34,12 +34,14 @@
     public enum TokenSource
     {
         FromAuthorizationHeader = 0,
+        FromCustomHeader = 2,
         FromQueryString = 1
     }
 
     public class TokenRetrievalOptions
     {
         public TokenSource Source { get; set; }
+        public string Header { get; set; } = "Geone-Auth-IS4";
         public string NameOrSchema { get; set; }
     }
 }

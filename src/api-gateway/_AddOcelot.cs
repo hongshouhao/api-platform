@@ -36,10 +36,10 @@ namespace ApiGateway
             }
 
             ocelotBuilder.AddPolly()
-                .AddCacheManager(x =>
-                {
-                    x.WithDictionaryHandle();
-                });
+            .AddCacheManager(x =>
+            {
+                x.WithDictionaryHandle();
+            });
 
             return services;
         }
@@ -50,7 +50,7 @@ namespace ApiGateway
             AuthenticationBuilder builder = services.AddAuthentication();
             foreach (var authop in authOptionsProvider.GetOptions())
             {
-                builder.AddIdentityServerAuthentication(authop.AuthScheme, authop.Build());
+                builder = builder.AddIdentityServerAuthentication(authop.AuthScheme, authop.Build());
             }
             return services;
         }

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 using NLog.Web;
 using Ocelot.Configuration.Setter;
 using Ocelot.Middleware;
@@ -26,6 +28,7 @@ namespace ApiGateway
 
         public void ConfigureServices(IServiceCollection services)
         {
+            Environment.ConfigureNLog($"nlog.{Environment.EnvironmentName}.config");
             services.AddDb(Configuration)
                     .AddSingleton<IFileConfigurationSetter, InternalConfigurationSetter>()
                     .AddOcelotSuit(Configuration)
@@ -45,10 +48,12 @@ namespace ApiGateway
                     });
         }
 
-        public void Configure(IApplicationBuilder app, ConfigurationController controller)
+        public void Configure(
+            IApplicationBuilder app,
+            ILoggerFactory loggerFactory,
+            ConfigurationController controller)
         {
-            NLogBuilder.ConfigureNLog($"nlog.{Environment.EnvironmentName}.config");
-
+            loggerFactory.AddNLog();
             app.UseMiddleware<ErrorHandlingMiddleware>()
                 .UseCors("CorsPolicy")
                 .UseAuthentication()
